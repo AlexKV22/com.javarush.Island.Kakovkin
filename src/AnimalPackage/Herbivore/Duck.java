@@ -2,58 +2,66 @@ package AnimalPackage.Herbivore;
 
 import AnimalPackage.Animal;
 import IslandModel.Island;
+import PlantPackage.Plant;
 import RandomizePackage.RandomizeClass;
+import Settings.Settings;
 
 public class Duck extends Herbivore {
-    private RandomizeClass randomizeClass = new RandomizeClass();
     private int moverRandom;
-    private static int counter = 0;
+    private int counter = 0;
+    private double eat;
     public Duck() {
-        setMaxWeigth(1);
-        setMaxCapacity(200);
-        setMaxFoodNeeded(0.15);
-        this.moverRandom = this.randomizeClass.getMover().nextInt(0,5);
+        setMaxWeigth(Settings.MAX_WEIGHT_DUCK);
+        setMaxCapacity(Settings.MAX_CAPACITY_IN_ONE_CELL_DUCK);
+        setMaxFoodNeeded(Settings.MAX_FOOD_NEEDED_DUCK);
         counter++;
-        setX(this.randomizeClass.getMover().nextInt(0,101));
-        setY(this.randomizeClass.getMover().nextInt(0,21));
+        setX(RandomizeClass.getRandom(Settings.MIN_ROW_ISLAND,Settings.MAX_ROW_ISLAND));
+        setY(RandomizeClass.getRandom(Settings.MIN_COL_ISLAND, Settings.MAX_COL_ISLAND));
     }
 
     @Override
     public void eat(Object food) {
-        setMaxWeigth(getMaxWeigth() + ((Herbivore) food).getMaxWeigth());
+        if(((Plant) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_DUCK) {
+            setMaxWeigth(Settings.MAX_WEIGHT_DUCK);
+        }
+        ((Plant) food).setCounter(getCounter() - 1);
         super.eat(food);
     }
 
     public void eat(Caterpillar food) {
-        if(randomizeClass.getRandomEat() < 0.9) {
-            setMaxWeigth(getMaxWeigth() + food.getMaxWeigth());
-            super.eat(food);
+        this.eat = RandomizeClass.getRandom();
+        if(eat < 0.9) {
+        food.setCounter(getCounter() - 1);
+        super.eat(food);
         }
     }
 
     @Override
     public void move() {
-        if (randomizeClass.getRandomEat() < 0.25) {
+        this.moverRandom = RandomizeClass.getRandom(0, Settings.MAX_SPEED_DUCK);
+        this.eat = RandomizeClass.getRandom();
+
+        if (eat < 0.25) {
             chooseDirectionAhead(this.getX());
-            setMaxWeigth(getMaxWeigth() - 0.02);
+            setMaxWeigth(getMaxWeigth() - Settings.MINUS_HEALTH_ONE_STEP_DUCK);
             if (getMaxWeigth() <= 0) {
                 die(this);
             }
-        } else if (randomizeClass.getRandomEat() > 0.25 && randomizeClass.getRandomEat() < 0.5) {
+        } else if (eat > 0.25 && eat < 0.5) {
             chooseDirectionReverse(this.getX());
-            setMaxWeigth(getMaxWeigth() - 0.02);
+            setMaxWeigth(getMaxWeigth() - Settings.MINUS_HEALTH_ONE_STEP_DUCK);
             if (getMaxWeigth() <= 0) {
                 die(this);
             }
-        } else if (randomizeClass.getRandomEat() > 0.5 && randomizeClass.getRandomEat() < 0.75) {
+        } else if (eat > 0.5 && eat < 0.75) {
             chooseDirectionLeft(this.getY());
-            setMaxWeigth(getMaxWeigth() - 0.02);
+            setMaxWeigth(getMaxWeigth() - Settings.MINUS_HEALTH_ONE_STEP_DUCK);
             if (getMaxWeigth() <= 0) {
                 die(this);
             }
-        } else if (randomizeClass.getRandomEat() > 0.75 && randomizeClass.getRandomEat() < 0.1) {
+        } else if (eat > 0.75 && eat < 1) {
             chooseDirectionRight(this.getY());
-            setMaxWeigth(getMaxWeigth() - 0.02);
+            setMaxWeigth(getMaxWeigth() - Settings.MINUS_HEALTH_ONE_STEP_DUCK);
             if (getMaxWeigth() <= 0) {
                 die(this);
             }
@@ -62,26 +70,26 @@ public class Duck extends Herbivore {
 
     @Override
     public void multiple(Animal partner) throws CloneNotSupportedException {
-        if (Duck.counter < getMaxCapacity() && this.getClass().equals(partner.getClass())) {
+        if (counter < getMaxCapacity() && this.getClass().equals(partner.getClass())) {
             this.clone();
-            Duck.counter++;
+            counter++;
         }
     }
 
     @Override
     public void die(Object death) {
         if (death instanceof Duck && getMaxWeigth() <= 0) {
-            Duck.counter--;
+            counter--;
             System.out.println("Утка, находящаяся в координатах: х - " + getX() + ", y - " + getY() + "умерла от голода :(((");
         }
     }
 
     @Override
     public void chooseDirectionAhead(int row) {
-        if (this.getX() > 0) {
-            int result = this.getX() - moverRandom;
-            if (result < 0) {
-                result = 0;
+        if (row > Settings.MIN_ROW_ISLAND) {
+            int result = row - moverRandom;
+            if (result < Settings.MIN_ROW_ISLAND) {
+                result = Settings.MIN_ROW_ISLAND;
             }
             this.setX(result);
         }
@@ -89,10 +97,10 @@ public class Duck extends Herbivore {
 
     @Override
     public void chooseDirectionReverse(int row) {
-        if (this.getX() < Island.getInstance().locations.length - 1) {
-            int result = this.getX() + moverRandom;
-            if (result > Island.getInstance().locations.length - 1) {
-                result = Island.getInstance().locations.length - 1;
+        if (row < Settings.MAX_ROW_ISLAND) {
+            int result = row + moverRandom;
+            if (result > Settings.MAX_ROW_ISLAND) {
+                result = Settings.MAX_ROW_ISLAND;
             }
             this.setX(result);
         }
@@ -100,10 +108,10 @@ public class Duck extends Herbivore {
 
     @Override
     public void chooseDirectionLeft(int col) {
-        if (this.getY() > 0) {
-            int result = this.getY() - moverRandom;
-            if (result < 0) {
-                result = 0;
+        if (col > Settings.MIN_COL_ISLAND) {
+            int result = col - moverRandom;
+            if (result < Settings.MIN_COL_ISLAND) {
+                result = Settings.MIN_COL_ISLAND;
             }
             this.setY(result);
         }
@@ -111,16 +119,20 @@ public class Duck extends Herbivore {
 
     @Override
     public void chooseDirectionRight(int col) {
-        if (this.getY() < Island.getInstance().locations.length) {
-            int result = this.getY() + moverRandom;
-            if (result > Island.getInstance().locations.length) {
-                result = Island.getInstance().locations.length;
+        if (col < Settings.MAX_COL_ISLAND) {
+            int result = col + moverRandom;
+            if (result > Settings.MAX_COL_ISLAND) {
+                result = Settings.MAX_COL_ISLAND;
             }
             this.setY(result);
         }
     }
 
-    public static int getCounter() {
+    public int getCounter() {
         return counter;
+    }
+
+    public void setCounter(int counter) {
+        this.counter = counter;
     }
 }

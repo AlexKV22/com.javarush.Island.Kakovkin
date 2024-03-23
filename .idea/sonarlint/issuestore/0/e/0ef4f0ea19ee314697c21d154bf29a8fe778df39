@@ -1,27 +1,45 @@
 
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ì‡íäúÿÿÿÿ8¤ŸÍêå1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ì‡íäúÿÿÿÿ8°†¯ãæ1
 t
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(…½ïÿÿÿÿÿ8¯ŸÍêå1
-i
-java:S1871!"LThis branch's code block is the same as the block for the branch on line 24.(ŸÍñ8Ÿ‹¡íå1
-i
-java:S1871$"LThis branch's code block is the same as the block for the branch on line 24.(ë½¨ô8å©Ÿíå1
-i
-java:S1871"LThis branch's code block is the same as the block for the branch on line 24.(”«Ñ©8ôĞíå1
-i
-java:S1871'"LThis branch's code block is the same as the block for the branch on line 24.(‚úı‰8ş¨ íå1
-n
-java:S1871"LThis branch's code block is the same as the block for the branch on line 24.(ÅÓ¶£ıÿÿÿÿ8šÊ íå1
-i
-java:S1871*"LThis branch's code block is the same as the block for the branch on line 24.(¡Šò8¼“Ÿíå1
-h
-java:S1871-"LThis branch's code block is the same as the block for the branch on line 24.(Ù¬w8ê×Ÿíå1
-i
-java:S18710"LThis branch's code block is the same as the block for the branch on line 24.(»»ø¯8µ‘íå1
-R
-java:S2696W"6Make the enclosing method "static" or remove this set.(ÂÕ¹Q8¶¾Ÿíå1
-[
-java:S1854^"9Remove this useless assignment to local variable "death".(½ÜøÅúÿÿÿÿ8¶¾Ÿíå1
-X
-java:S2696_"6Make the enclosing method "static" or remove this set.(ÙÒšÂıÿÿÿÿ8¶¾Ÿíå1
-G	java:S106`"+Replace this use of System.out by a logger.(¶‘š8¶¾Ÿíå1
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.(…½ïÿÿÿÿÿ8º†¯ãæ1
+a
+java:S6201"DReplace this instanceof check and cast with 'instanceof Horse horse'(Ò’Ğ—8è´ãæ1
+a
+java:S6201"DReplace this instanceof check and cast with 'instanceof Horse horse'(Ò’Ğ—8Ãöµãæ1
+d
+java:S6201""BReplace this instanceof check and cast with 'instanceof Dear dear'(ÄÒ­ÿúÿÿÿÿ8¿ç¾ãæ1
+d
+java:S6201""BReplace this instanceof check and cast with 'instanceof Dear dear'(ÄÒ­ÿúÿÿÿÿ8Æ…¿ãæ1
+c
+java:S6201*"FReplace this instanceof check and cast with 'instanceof Rabbit rabbit'(¡ş8Ôö¿ãæ1
+c
+java:S6201*"FReplace this instanceof check and cast with 'instanceof Rabbit rabbit'(¡ş8…˜Àãæ1
+f
+java:S62012"DReplace this instanceof check and cast with 'instanceof Mouse mouse'(¶¯Èşÿÿÿÿ8âŠÃãæ1
+f
+java:S62012"DReplace this instanceof check and cast with 'instanceof Mouse mouse'(¶¯Èşÿÿÿÿ8®·Ããæ1
+a
+java:S6201:"DReplace this instanceof check and cast with 'instanceof Sheep sheep'(ÕŸ‰ö8ŞÕÆãæ1
+a
+java:S6201:"DReplace this instanceof check and cast with 'instanceof Sheep sheep'(ÕŸ‰ö8ÿóÆãæ1
+^
+java:S6201B"BReplace this instanceof check and cast with 'instanceof Goat goat'(´Íõl8ªæÇãæ1
+^
+java:S6201B"BReplace this instanceof check and cast with 'instanceof Goat goat'(´Íõl8Ö„Èãæ1
+_
+java:S6201J"BReplace this instanceof check and cast with 'instanceof Boar boar'(ÀæÖÏ8İÉãæ1
+_
+java:S6201J"BReplace this instanceof check and cast with 'instanceof Boar boar'(ÀæÖÏ8ÒÁÉãæ1
+e
+java:S6201R"HReplace this instanceof check and cast with 'instanceof Buffalo buffalo'(ºÒ›è8ö¬Êãæ1
+e
+java:S6201R"HReplace this instanceof check and cast with 'instanceof Buffalo buffalo'(ºÒ›è8îÒÊãæ1
+d
+java:S6201Z"BReplace this instanceof check and cast with 'instanceof Duck duck'(ãæ¿Ğüÿÿÿÿ8‹¿Ëãæ1
+d
+java:S6201Z"BReplace this instanceof check and cast with 'instanceof Duck duck'(ãæ¿Ğüÿÿÿÿ8°ÚËãæ1
+\
+java:S1854"9Remove this useless assignment to local variable "death".(½ÜøÅúÿÿÿÿ8Â†¯ãæ1
+H	java:S106"+Replace this use of System.out by a logger.(¶‘š8Ã†¯ãæ1
+L
+java:S1128"/Remove this unused import 'IslandModel.Island'.(ñŒîé8¼ˆÂææ1

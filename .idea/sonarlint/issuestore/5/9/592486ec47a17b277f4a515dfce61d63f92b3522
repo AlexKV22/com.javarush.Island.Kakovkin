@@ -1,15 +1,25 @@
 
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ì‡íäúÿÿÿÿ8Ï°…‰å1
-i
-java:S1871"LThis branch's code block is the same as the block for the branch on line 24.(÷£¯¿8áı£íå1
-i
-java:S1871!"LThis branch's code block is the same as the block for the branch on line 24.(£„Ê8àï¤íå1
-i
-java:S1871"LThis branch's code block is the same as the block for the branch on line 24.(¡ÖÛ÷8°’¤íå1
-S
-java:S2696H"6Make the enclosing method "static" or remove this set.(±ïşÄ8õı˜ëå1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ì‡íäúÿÿÿÿ8¿¨“âæ1
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(…½ïÿÿÿÿÿ8Ë¨“âæ1
+c
+java:S6201"FReplace this instanceof check and cast with 'instanceof Rabbit rabbit'(Ôš„é8Ì¨“âæ1
+c
+java:S6201"FReplace this instanceof check and cast with 'instanceof Rabbit rabbit'(Ôš„é8Ì¨“âæ1
+f
+java:S6201""DReplace this instanceof check and cast with 'instanceof Mouse mouse'(âˆªÀùÿÿÿÿ8Í¨“âæ1
+f
+java:S6201""DReplace this instanceof check and cast with 'instanceof Mouse mouse'(âˆªÀùÿÿÿÿ8Í¨“âæ1
+_
+java:S6201*"BReplace this instanceof check and cast with 'instanceof Duck duck'(ƒ®û”8Î¨“âæ1
+_
+java:S6201*"BReplace this instanceof check and cast with 'instanceof Duck duck'(ƒ®û”8Î¨“âæ1
+r
+java:S62012"PReplace this instanceof check and cast with 'instanceof Caterpillar caterpillar'(ºˆîİøÿÿÿÿ8Ï¨“âæ1
+r
+java:S62012"PReplace this instanceof check and cast with 'instanceof Caterpillar caterpillar'(ºˆîİøÿÿÿÿ8Ï¨“âæ1
 [
-java:S1854O"9Remove this useless assignment to local variable "death".(½ÜøÅúÿÿÿÿ8ü‘šëå1
-X
-java:S2696P"6Make the enclosing method "static" or remove this set.(ÊÑÏ¶ıÿÿÿÿ8³Şšëå1
-G	java:S106Q"+Replace this use of System.out by a logger.(œ´¬ş8üÖ™ëå1
+java:S1854f"9Remove this useless assignment to local variable "death".(½ÜøÅúÿÿÿÿ8Ó¨“âæ1
+G	java:S106h"+Replace this use of System.out by a logger.(œ´¬ş8Ô¨“âæ1
+L
+java:S1128"/Remove this unused import 'IslandModel.Island'.(ñŒîé8Ş„Âææ1

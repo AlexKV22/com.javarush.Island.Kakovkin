@@ -4,76 +4,124 @@ import AnimalPackage.Animal;
 import AnimalPackage.Herbivore.*;
 import IslandModel.Island;
 import RandomizePackage.RandomizeClass;
+import Settings.Settings;
 
 public class Wolf extends Predator {
-    private RandomizeClass randomizeClass = new RandomizeClass();
     private int moverRandom;
-    private static int counter = 0;
+    private int counter = 0;
+    private double eat;
     public Wolf() {
-        setMaxWeigth(50);
-        setMaxCapacity(30);
-        setMaxFoodNeeded(8);
-        this.moverRandom = this.randomizeClass.getMover().nextInt(0,4);
+        setMaxWeigth(Settings.MAX_WEIGHT_WOLF);
+        setMaxCapacity(Settings.MAX_CAPACITY_IN_ONE_CELL_WOLF);
+        setMaxFoodNeeded(Settings.MAX_FOOD_NEEDED_WOLF);
         counter++;
-        setX(this.randomizeClass.getMover().nextInt(0,101));
-        setY(this.randomizeClass.getMover().nextInt(0,21));
+        setX(RandomizeClass.getRandom(Settings.MIN_ROW_ISLAND,Settings.MAX_ROW_ISLAND));
+        setY(RandomizeClass.getRandom(Settings.MIN_COL_ISLAND, Settings.MAX_COL_ISLAND));
     }
 
     @Override
     public void eat(Object food) {
-        if (food instanceof Horse && randomizeClass.getRandomEat() < 0.1) {
-            setMaxWeigth(getMaxWeigth() + ((Herbivore) food).getMaxWeigth());
+        this.eat = RandomizeClass.getRandom();
+
+        if (food instanceof Horse && eat < 0.1) {
+            if(((Horse) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_WOLF) {
+                setMaxWeigth(Settings.MAX_WEIGHT_WOLF);
+            }
+            ((Horse) food).setCounter(getCounter() - 1);
             super.eat(food);
-        } else if (food instanceof Dear && randomizeClass.getRandomEat() < 0.15) {
-            setMaxWeigth(getMaxWeigth() + ((Herbivore) food).getMaxWeigth());
+        }
+
+        else if (food instanceof Dear && eat < 0.15) {
+            if(((Dear) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_WOLF) {
+                setMaxWeigth(Settings.MAX_WEIGHT_WOLF);
+            }
+            ((Dear) food).setCounter(getCounter() - 1);
             super.eat(food);
-        } else if (food instanceof Rabbit && randomizeClass.getRandomEat() < 0.6) {
-            setMaxWeigth(getMaxWeigth() + ((Herbivore) food).getMaxWeigth());
+        }
+
+        else if (food instanceof Rabbit && eat < 0.6) {
+            if(((Rabbit) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_WOLF) {
+                setMaxWeigth(Settings.MAX_WEIGHT_WOLF);
+            }
+            ((Rabbit) food).setCounter(getCounter() - 1);
             super.eat(food);
-        } else if (food instanceof Mouse && randomizeClass.getRandomEat() < 0.8) {
-            setMaxWeigth(getMaxWeigth() + ((Herbivore) food).getMaxWeigth());
+        }
+
+        else if (food instanceof Mouse && eat < 0.8) {
+            if(((Mouse) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_WOLF) {
+                setMaxWeigth(Settings.MAX_WEIGHT_WOLF);
+            }
+            ((Mouse) food).setCounter(getCounter() - 1);
             super.eat(food);
-        } else if (food instanceof Sheep && randomizeClass.getRandomEat() < 0.7) {
-            setMaxWeigth(getMaxWeigth() + ((Herbivore) food).getMaxWeigth());
+        }
+
+        else if (food instanceof Sheep && eat < 0.7) {
+            if(((Sheep) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_WOLF) {
+                setMaxWeigth(Settings.MAX_WEIGHT_WOLF);
+            }
+            ((Sheep) food).setCounter(getCounter() - 1);
             super.eat(food);
-        } else if (food instanceof Goat && randomizeClass.getRandomEat() < 0.6) {
-            setMaxWeigth(getMaxWeigth() + ((Herbivore) food).getMaxWeigth());
+        }
+
+        else if (food instanceof Goat && eat < 0.6) {
+            if(((Goat) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_WOLF) {
+                setMaxWeigth(Settings.MAX_WEIGHT_WOLF);
+            }
+            ((Goat) food).setCounter(getCounter() - 1);
             super.eat(food);
-        } else if (food instanceof Boar && randomizeClass.getRandomEat() < 0.15) {
-            setMaxWeigth(getMaxWeigth() + ((Herbivore) food).getMaxWeigth());
+        }
+
+        else if (food instanceof Boar && eat < 0.15) {
+            if(((Boar) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_WOLF) {
+                setMaxWeigth(Settings.MAX_WEIGHT_WOLF);
+            }
+            ((Boar) food).setCounter(getCounter() - 1);
             super.eat(food);
-        } else if (food instanceof Buffalo && randomizeClass.getRandomEat() < 0.1) {
-            setMaxWeigth(getMaxWeigth() + ((Herbivore) food).getMaxWeigth());
+        }
+
+        else if (food instanceof Buffalo && eat < 0.1) {
+            if(((Buffalo) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_WOLF) {
+                setMaxWeigth(Settings.MAX_WEIGHT_WOLF);
+            }
+            ((Buffalo) food).setCounter(getCounter() - 1);
             super.eat(food);
-        } else if (food instanceof Duck && randomizeClass.getRandomEat() < 0.4) {
-            setMaxWeigth(getMaxWeigth() + ((Herbivore) food).getMaxWeigth());
+        }
+
+        else if (food instanceof Duck && eat < 0.4) {
+            if(((Duck) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_WOLF) {
+                setMaxWeigth(Settings.MAX_WEIGHT_WOLF);
+            }
+            ((Duck) food).setCounter(getCounter() - 1);
             super.eat(food);
         }
     }
 
     @Override
     public void move() {
-        if (randomizeClass.getRandomEat() < 0.25) {
+        this.moverRandom = RandomizeClass.getRandom(0, Settings.MAX_SPEED_WOLF);
+        this.eat = RandomizeClass.getRandom();
+
+        if (eat < 0.25) {
             chooseDirectionAhead(this.getX());
-            setMaxWeigth(getMaxWeigth() - 5);
+            setMaxWeigth(getMaxWeigth() - Settings.MINUS_HEALTH_ONE_STEP_WOLF);
             if (getMaxWeigth() <= 0) {
                 die(this);
             }
-        } else if (randomizeClass.getRandomEat() > 0.25 && randomizeClass.getRandomEat() < 0.5) {
+        } else if (eat > 0.25 && eat < 0.5) {
             chooseDirectionReverse(this.getX());
-            setMaxWeigth(getMaxWeigth() - 5);
+            setMaxWeigth(getMaxWeigth() - Settings.MINUS_HEALTH_ONE_STEP_WOLF);
             if (getMaxWeigth() <= 0) {
                 die(this);
             }
-        } else if (randomizeClass.getRandomEat() > 0.5 && randomizeClass.getRandomEat() < 0.75) {
+        } else if (eat > 0.5 && eat < 0.75) {
             chooseDirectionLeft(this.getY());
-            setMaxWeigth(getMaxWeigth() - 5);
+            setMaxWeigth(getMaxWeigth() - Settings.MINUS_HEALTH_ONE_STEP_WOLF);
             if (getMaxWeigth() <= 0) {
                 die(this);
             }
-        } else if (randomizeClass.getRandomEat() > 0.75 && randomizeClass.getRandomEat() < 0.1) {
+        } else if (eat > 0.75 && eat < 1) {
             chooseDirectionRight(this.getY());
-            setMaxWeigth(getMaxWeigth() - 5);
+            setMaxWeigth(getMaxWeigth() - Settings.MINUS_HEALTH_ONE_STEP_WOLF);
             if (getMaxWeigth() <= 0) {
                 die(this);
             }
@@ -82,9 +130,9 @@ public class Wolf extends Predator {
 
     @Override
     public void multiple(Animal partner) throws CloneNotSupportedException {
-        if (Wolf.counter < getMaxCapacity() && this.getClass().equals(partner.getClass())) {
+        if (counter < getMaxCapacity() && this.getClass().equals(partner.getClass())) {
             this.clone();
-            Wolf.counter++;
+            counter++;
         }
     }
 
@@ -92,17 +140,17 @@ public class Wolf extends Predator {
     public void die(Object death) {
         if (death instanceof Wolf && getMaxWeigth() <= 0) {
             death = null;
-            Wolf.counter--;
+            counter--;
             System.out.println("Волк, находящийся в координатах: х - " + getX() + ", y - " + getY() + "умер от голода :(((");
         }
     }
 
     @Override
     public void chooseDirectionAhead(int row) {
-        if (this.getX() > 0) {
-            int result = this.getX() - moverRandom;
-            if (result < 0) {
-                result = 0;
+        if (row > Settings.MIN_ROW_ISLAND) {
+            int result = row - moverRandom;
+            if (result < Settings.MIN_ROW_ISLAND) {
+                result = Settings.MIN_ROW_ISLAND;
             }
             this.setX(result);
         }
@@ -110,10 +158,10 @@ public class Wolf extends Predator {
 
     @Override
     public void chooseDirectionReverse(int row) {
-        if (this.getX() < Island.getInstance().locations.length - 1) {
-            int result = this.getX() + moverRandom;
-            if (result > Island.getInstance().locations.length - 1) {
-                result = Island.getInstance().locations.length - 1;
+        if (row < Settings.MAX_ROW_ISLAND) {
+            int result = row + moverRandom;
+            if (result > Settings.MAX_ROW_ISLAND) {
+                result = Settings.MAX_ROW_ISLAND;
             }
             this.setX(result);
         }
@@ -121,10 +169,10 @@ public class Wolf extends Predator {
 
     @Override
     public void chooseDirectionLeft(int col) {
-        if (this.getY() > 0) {
-            int result = this.getY() - moverRandom;
-            if (result < 0) {
-                result = 0;
+        if (col > Settings.MIN_COL_ISLAND) {
+            int result = col - moverRandom;
+            if (result < Settings.MIN_COL_ISLAND) {
+                result = Settings.MIN_COL_ISLAND;
             }
             this.setY(result);
         }
@@ -132,16 +180,20 @@ public class Wolf extends Predator {
 
     @Override
     public void chooseDirectionRight(int col) {
-        if (this.getY() < Island.getInstance().locations.length) {
-            int result = this.getY() + moverRandom;
-            if (result > Island.getInstance().locations.length) {
-                result = Island.getInstance().locations.length;
+        if (col < Settings.MAX_COL_ISLAND) {
+            int result = col + moverRandom;
+            if (result > Settings.MAX_COL_ISLAND) {
+                result = Settings.MAX_COL_ISLAND;
             }
             this.setY(result);
         }
     }
 
-    public static int getCounter() {
+    public int getCounter() {
         return counter;
+    }
+
+    public void setCounter(int counter) {
+        this.counter = counter;
     }
 }

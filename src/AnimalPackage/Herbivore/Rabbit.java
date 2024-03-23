@@ -2,51 +2,55 @@ package AnimalPackage.Herbivore;
 
 import AnimalPackage.Animal;
 import IslandModel.Island;
+import PlantPackage.Plant;
 import RandomizePackage.RandomizeClass;
+import Settings.Settings;
 
 public class Rabbit extends Herbivore {
-    private RandomizeClass randomizeClass = new RandomizeClass();
     private int moverRandom;
-    private static int counter = 0;
+    private int counter = 0;
+    private double eat;
     public Rabbit() {
-        setMaxWeigth(2);
-        setMaxCapacity(150);
-        setMaxFoodNeeded(0.45);
-        this.moverRandom = this.randomizeClass.getMover().nextInt(0,3);
+        setMaxWeigth(Settings.MAX_WEIGHT_RABBIT);
+        setMaxCapacity(Settings.MAX_CAPACITY_IN_ONE_CELL_RABBIT);
+        setMaxFoodNeeded(Settings.MAX_FOOD_NEEDED_RABBIT);
         counter++;
-        setX(this.randomizeClass.getMover().nextInt(0,101));
-        setY(this.randomizeClass.getMover().nextInt(0,21));
+        setX(RandomizeClass.getRandom(Settings.MIN_ROW_ISLAND,Settings.MAX_ROW_ISLAND));
+        setY(RandomizeClass.getRandom(Settings.MIN_COL_ISLAND, Settings.MAX_COL_ISLAND));
     }
 
     @Override
     public void eat(Object food) {
-        setMaxWeigth(getMaxWeigth() + ((Herbivore) food).getMaxWeigth());
+        ((Plant) food).setCounter(getCounter() - 1);
         super.eat(food);
     }
 
     @Override
     public void move() {
-        if (randomizeClass.getRandomEat() < 0.25) {
+        this.moverRandom = RandomizeClass.getRandom(0, Settings.MAX_SPEED_RABBIT);
+        this.eat = RandomizeClass.getRandom();
+
+        if (eat < 0.25) {
             chooseDirectionAhead(this.getX());
-            setMaxWeigth(getMaxWeigth() - 0.5);
+            setMaxWeigth(getMaxWeigth() - Settings.MINUS_HEALTH_ONE_STEP_RABBIT);
             if (getMaxWeigth() <= 0) {
                 die(this);
             }
-        } else if (randomizeClass.getRandomEat() > 0.25 && randomizeClass.getRandomEat() < 0.5) {
+        } else if (eat > 0.25 && eat < 0.5) {
             chooseDirectionReverse(this.getX());
-            setMaxWeigth(getMaxWeigth() - 0.5);
+            setMaxWeigth(getMaxWeigth() - Settings.MINUS_HEALTH_ONE_STEP_RABBIT);
             if (getMaxWeigth() <= 0) {
                 die(this);
             }
-        } else if (randomizeClass.getRandomEat() > 0.5 && randomizeClass.getRandomEat() < 0.75) {
+        } else if (eat > 0.5 && eat < 0.75) {
             chooseDirectionLeft(this.getY());
-            setMaxWeigth(getMaxWeigth() - 0.5);
+            setMaxWeigth(getMaxWeigth() - Settings.MINUS_HEALTH_ONE_STEP_RABBIT);
             if (getMaxWeigth() <= 0) {
                 die(this);
             }
-        } else if (randomizeClass.getRandomEat() > 0.75 && randomizeClass.getRandomEat() < 0.1) {
+        } else if (eat > 0.75 && eat < 1) {
             chooseDirectionRight(this.getY());
-            setMaxWeigth(getMaxWeigth() - 0.5);
+            setMaxWeigth(getMaxWeigth() - Settings.MINUS_HEALTH_ONE_STEP_RABBIT);
             if (getMaxWeigth() <= 0) {
                 die(this);
             }
@@ -55,26 +59,26 @@ public class Rabbit extends Herbivore {
 
     @Override
     public void multiple(Animal partner) throws CloneNotSupportedException {
-        if (Rabbit.counter < getMaxCapacity() && this.getClass().equals(partner.getClass())) {
+        if (counter < getMaxCapacity() && this.getClass().equals(partner.getClass())) {
             this.clone();
-            Rabbit.counter++;
+            counter++;
         }
     }
 
     @Override
     public void die(Object death) {
         if (death instanceof Rabbit && getMaxWeigth() <= 0) {
-            Rabbit.counter--;
+            counter--;
             System.out.println("Заяц, находящийся в координатах: х - " + getX() + ", y - " + getY() + "умер от голода :(((");
         }
     }
 
     @Override
     public void chooseDirectionAhead(int row) {
-        if (this.getX() > 0) {
-            int result = this.getX() - moverRandom;
-            if (result < 0) {
-                result = 0;
+        if (row > Settings.MIN_ROW_ISLAND) {
+            int result = row - moverRandom;
+            if (result < Settings.MIN_ROW_ISLAND) {
+                result = Settings.MIN_ROW_ISLAND;
             }
             this.setX(result);
         }
@@ -82,10 +86,10 @@ public class Rabbit extends Herbivore {
 
     @Override
     public void chooseDirectionReverse(int row) {
-        if (this.getX() < Island.getInstance().locations.length - 1) {
-            int result = this.getX() + moverRandom;
-            if (result > Island.getInstance().locations.length - 1) {
-                result = Island.getInstance().locations.length - 1;
+        if (row < Settings.MAX_ROW_ISLAND) {
+            int result = row + moverRandom;
+            if (result > Settings.MAX_ROW_ISLAND) {
+                result = Settings.MAX_ROW_ISLAND;
             }
             this.setX(result);
         }
@@ -93,10 +97,10 @@ public class Rabbit extends Herbivore {
 
     @Override
     public void chooseDirectionLeft(int col) {
-        if (this.getY() > 0) {
-            int result = this.getY() - moverRandom;
-            if (result < 0) {
-                result = 0;
+        if (col > Settings.MIN_COL_ISLAND) {
+            int result = col - moverRandom;
+            if (result < Settings.MIN_COL_ISLAND) {
+                result = Settings.MIN_COL_ISLAND;
             }
             this.setY(result);
         }
@@ -104,16 +108,20 @@ public class Rabbit extends Herbivore {
 
     @Override
     public void chooseDirectionRight(int col) {
-        if (this.getY() < Island.getInstance().locations.length) {
-            int result = this.getY() + moverRandom;
-            if (result > Island.getInstance().locations.length) {
-                result = Island.getInstance().locations.length;
+        if (col < Settings.MAX_COL_ISLAND) {
+            int result = col + moverRandom;
+            if (result > Settings.MAX_COL_ISLAND) {
+                result = Settings.MAX_COL_ISLAND;
             }
             this.setY(result);
         }
     }
 
-    public static int getCounter() {
+    public int getCounter() {
         return counter;
+    }
+
+    public void setCounter(int counter) {
+        this.counter = counter;
     }
 }

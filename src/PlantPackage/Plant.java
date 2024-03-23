@@ -28,10 +28,18 @@ public class Plant implements Eatable {
         return maxCapacity;
     }
 
-    public void multiple(Animal partner) throws CloneNotSupportedException {
+    public void multiple(Plant partner) throws CloneNotSupportedException {
         if (counter < getMaxCapacity() && this.getClass().equals(partner.getClass())) {
             this.clone();
             counter++;
         }
+    }
+
+    public int getCounter() {
+        return counter;
+    }
+
+    public void setCounter(int counter) {
+        this.counter = counter;
     }
 }

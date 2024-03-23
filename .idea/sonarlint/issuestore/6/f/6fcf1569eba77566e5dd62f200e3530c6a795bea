@@ -1,15 +1,23 @@
 
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ì‡íäúÿÿÿÿ8ù§‰ëå1
-i
-java:S1871"LThis branch's code block is the same as the block for the branch on line 27.(È—”ÿ8½Ú¢íå1
-n
-java:S1871!"LThis branch's code block is the same as the block for the branch on line 27.(¶”Ïƒÿÿÿÿÿ8Ëí¢íå1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ì‡íäúÿÿÿÿ8¢¿êâæ1
+a
+java:S6201"DReplace this instanceof check and cast with 'instanceof Mouse mouse'(ş¨‰á8ıòãæ1
+a
+java:S6201"DReplace this instanceof check and cast with 'instanceof Mouse mouse'(ş¨‰á8ò ‘ãæ1
+c
+java:S6201%"FReplace this instanceof check and cast with 'instanceof Rabbit rabbit'(è°·Ï8¼¹“ãæ1
+c
+java:S6201%"FReplace this instanceof check and cast with 'instanceof Rabbit rabbit'(è°·Ï8¼¹“ãæ1
+^
+java:S6201-"BReplace this instanceof check and cast with 'instanceof Duck duck'(Ô‚†Y8×€•ãæ1
+^
+java:S6201-"BReplace this instanceof check and cast with 'instanceof Duck duck'(Ô‚†Y8×€•ãæ1
 U
-java:S1854*"8Remove this useless assignment to local variable "food".(üË’ª8‚¨‰ëå1
-X
-java:S2696O"6Make the enclosing method "static" or remove this set.(ÚÎÌüÿÿÿÿ8†¨‰ëå1
+java:S1854<"8Remove this useless assignment to local variable "food".(üË’ª8¯¿êâæ1
 [
-java:S1854V"9Remove this useless assignment to local variable "death".(½ÜøÅúÿÿÿÿ8†¨‰ëå1
-X
-java:S2696W"6Make the enclosing method "static" or remove this set.(ÑÔäĞûÿÿÿÿ8†¨‰ëå1
-L	java:S106X"+Replace this use of System.out by a logger.(ÇÊ¤™øÿÿÿÿ8‡¨‰ëå1
+java:S1854n"9Remove this useless assignment to local variable "death".(½ÜøÅúÿÿÿÿ8´¿êâæ1
+L	java:S106p"+Replace this use of System.out by a logger.(ÇÊ¤™øÿÿÿÿ8µ¿êâæ1
+`
+java:S1128">Remove this unused import 'AnimalPackage.Herbivore.Herbivore'.(¹ı½¹ÿÿÿÿÿ8¸„Âææ1
+L
+java:S1128"/Remove this unused import 'IslandModel.Island'.(ñŒîé8¸„Âææ1

@@ -1,6 +1,7 @@
 package AnimalPackage;
 import Interfaces.Eatable;
 import RandomizePackage.RandomizeClass;
+import Settings.Settings;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;

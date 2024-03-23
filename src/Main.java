@@ -8,6 +8,7 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
+        Island island = new Island();
         Animal bear = new Bear();
         System.out.println(bear.getMaxWeigth());
         System.out.println(bear.getX() + " " + bear.getY());

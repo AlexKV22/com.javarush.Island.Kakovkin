@@ -1,42 +1,47 @@
 package AnimalPackage.Herbivore;
 
 import AnimalPackage.Animal;
+import PlantPackage.Plant;
 import RandomizePackage.RandomizeClass;
+import Settings.Settings;
 
 public class Caterpillar extends Herbivore {
-    private RandomizeClass randomizeClass = new RandomizeClass();
-    private static int counter = 0;
+    private int counter = 0;
     public Caterpillar() {
-        setMaxWeigth(0.01);
-        setMaxCapacity(1000);
+        setMaxWeigth(Settings.MAX_WEIGHT_CATERPILLAR);
+        setMaxCapacity(Settings.MAX_CAPACITY_IN_ONE_CELL_CATERPILLAR);
         counter++;
-        setX(this.randomizeClass.getMover().nextInt(0,101));
-        setY(this.randomizeClass.getMover().nextInt(0,21));
+        setX(RandomizeClass.getRandom(Settings.MIN_ROW_ISLAND,Settings.MAX_ROW_ISLAND));
+        setY(RandomizeClass.getRandom(Settings.MIN_COL_ISLAND, Settings.MAX_COL_ISLAND));
     }
 
     @Override
     public void eat(Object food) {
-        setMaxWeigth(getMaxWeigth() + ((Herbivore) food).getMaxWeigth());
+        ((Plant) food).setCounter(getCounter() - 1);
         super.eat(food);
     }
 
     @Override
     public void multiple(Animal partner) throws CloneNotSupportedException {
-        if (Caterpillar.counter < getMaxCapacity() && this.getClass().equals(partner.getClass())) {
+        if (counter < getMaxCapacity() && this.getClass().equals(partner.getClass())) {
             this.clone();
-            Caterpillar.counter++;
+            counter++;
         }
     }
 
     @Override
     public void die(Object death) {
         if (death instanceof Caterpillar && getMaxWeigth() <= 0) {
-            Caterpillar.counter--;
+            counter--;
             System.out.println("Гусеница, находящаяся в координатах: х - " + getX() + ", y - " + getY() + "умерла от голода :(((");
         }
     }
 
-    public static int getCounter() {
+    public int getCounter() {
         return counter;
+    }
+
+    public void setCounter(int counter) {
+        this.counter = counter;
     }
 }

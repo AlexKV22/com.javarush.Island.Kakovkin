@@ -33,6 +33,7 @@ public class Bear extends Predator {
             if(((Horse) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
                 setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
             }
+            ((Horse) food).setCounter(getCounter() - 1);
             super.eat(food);
         }
 
@@ -40,6 +41,7 @@ public class Bear extends Predator {
             if(((Dear) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
                 setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
             }
+            ((Dear) food).setCounter(getCounter() - 1);
             super.eat(food);
         }
 
@@ -47,6 +49,7 @@ public class Bear extends Predator {
             if(((Rabbit) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
                 setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
             }
+            ((Rabbit) food).setCounter(getCounter() - 1);
             super.eat(food);
         }
 
@@ -54,13 +57,15 @@ public class Bear extends Predator {
             if(((Mouse) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
                 setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
             }
+            ((Mouse) food).setCounter(getCounter() - 1);
             super.eat(food);
         }
 
-        else if (food instanceof Sheep || eat < 0.7) {
+        else if (food instanceof Sheep && eat < 0.7) {
             if(((Sheep) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
                 setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
             }
+            ((Sheep) food).setCounter(getCounter() - 1);
             super.eat(food);
         }
 
@@ -68,6 +73,7 @@ public class Bear extends Predator {
             if(((Goat) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
                 setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
             }
+            ((Goat) food).setCounter(getCounter() - 1);
             super.eat(food);
         }
 
@@ -75,6 +81,7 @@ public class Bear extends Predator {
             if(((Boar) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
                 setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
             }
+            ((Boar) food).setCounter(getCounter() - 1);
             super.eat(food);
         }
 
@@ -82,6 +89,7 @@ public class Bear extends Predator {
             if(((Buffalo) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
                 setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
             }
+            ((Buffalo) food).setCounter(getCounter() - 1);
             super.eat(food);
         }
 
@@ -89,6 +97,7 @@ public class Bear extends Predator {
             if(((Duck) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
                 setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
             }
+            ((Duck) food).setCounter(getCounter() - 1);
             super.eat(food);
         }
     }
@@ -99,12 +108,14 @@ public class Bear extends Predator {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
                 setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
             }
+            food.setCounter(getCounter() - 1);
             food = null;
         }
     }
 
     @Override
     public void move() {
+
         this.moverRandom = RandomizeClass.getRandom(0, Settings.MAX_SPEED_BEAR);
         this.eat = RandomizeClass.getRandom();
         if (eat < 0.25) {
@@ -153,40 +164,40 @@ public class Bear extends Predator {
 
     @Override
     public void chooseDirectionAhead(int row) {
-        if (this.getX() > 0) {
-            int result = this.getX() - moverRandom;
-            if (result < 0) {
-                result = 0;
+        if (row > Settings.MIN_ROW_ISLAND) {
+            int result = row - moverRandom;
+            if (result < Settings.MIN_ROW_ISLAND) {
+                result = Settings.MIN_ROW_ISLAND;
             }
             this.setX(result);
         }
     }
     @Override
     public void chooseDirectionReverse(int row) {
-        if (this.getX() < Island.getInstance().locations.length - 1) {
-            int result = this.getX() + moverRandom;
-            if (result > Island.getInstance().locations.length - 1) {
-                result = Island.getInstance().locations.length - 1;
+        if (row < Settings.MAX_ROW_ISLAND) {
+            int result = row + moverRandom;
+            if (result > Settings.MAX_ROW_ISLAND) {
+                result = Settings.MAX_ROW_ISLAND;
             }
             this.setX(result);
         }
     }
     @Override
     public void chooseDirectionLeft(int col) {
-        if (this.getY() > 0) {
-            int result = this.getY() - moverRandom;
-            if (result < 0) {
-                result = 0;
+        if (col > Settings.MIN_COL_ISLAND) {
+            int result = col - moverRandom;
+            if (result < Settings.MIN_COL_ISLAND) {
+                result = Settings.MIN_COL_ISLAND;
             }
             this.setY(result);
         }
     }
     @Override
     public void chooseDirectionRight(int col) {
-        if (this.getY() < Island.getInstance().locations.length) {
-            int result = this.getY() + moverRandom;
-            if (result > Island.getInstance().locations.length) {
-                result = Island.getInstance().locations.length;
+        if (col < Settings.MAX_COL_ISLAND) {
+            int result = col + moverRandom;
+            if (result > Settings.MAX_COL_ISLAND) {
+                result = Settings.MAX_COL_ISLAND;
             }
             this.setY(result);
         }
