@@ -1,0 +1,15 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(μ‡νδϊÿÿÿÿ8Ο°…‰ε1
+i
+java:S1871"LThis branch's code block is the same as the block for the branch on line 24.(χ£―Ώ8αύ£νε1
+i
+java:S1871"LThis branch's code block is the same as the block for the branch on line 24.(΅ΦΫχ8°’¤νε1
+i
+java:S1871!"LThis branch's code block is the same as the block for the branch on line 24.(£„Κ8ΰο¤νε1
+S
+java:S2696H"6Make the enclosing method "static" or remove this set.(±οώΔ8υύλε1
+[
+java:S1854O"9Remove this useless assignment to local variable "death".(½άψΕϊÿÿÿÿ8ό‘λε1
+X
+java:S2696P"6Make the enclosing method "static" or remove this set.(ΚΡΟ¶ύÿÿÿÿ8³ήλε1
+G	java:S106Q"+Replace this use of System.out by a logger.(΄¬ώ8όΦ™λε1

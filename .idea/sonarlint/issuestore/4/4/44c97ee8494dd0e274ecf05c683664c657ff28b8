@@ -1,0 +1,27 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(μ‡νδϊÿÿÿÿ8‚“νε1
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(…½οÿÿÿÿÿ8°“νε1
+i
+java:S1871+"LThis branch's code block is the same as the block for the branch on line 28.(³ά‡Ι8•άªνε1
+n
+java:S1871%"LThis branch's code block is the same as the block for the branch on line 28.(£β¬€όÿÿÿÿ8δ“¨νε1
+i
+java:S1871""LThis branch's code block is the same as the block for the branch on line 28.(΅ΦΫχ8“υ©νε1
+i
+java:S1871"LThis branch's code block is the same as the block for the branch on line 28.(ΆΚΪ¤8ΙΕ©νε1
+n
+java:S1871."LThis branch's code block is the same as the block for the branch on line 28.(¶”Οƒÿÿÿÿÿ8Υυªνε1
+i
+java:S1871("LThis branch's code block is the same as the block for the branch on line 28.(›Ψ²8®±ªνε1
+U
+java:S18548"8Remove this useless assignment to local variable "food".(όΛ’ª8¶“νε1
+X
+java:S2696]"6Make the enclosing method "static" or remove this set.(ΕΉ’ώÿÿÿÿ8µ“νε1
+[
+java:S1854d"9Remove this useless assignment to local variable "death".(½άψΕϊÿÿÿÿ8ΆΌνε1
+R
+java:S2696e"6Make the enclosing method "static" or remove this set.(Ω‚¶%8¶“νε1
+L	java:S106f"+Replace this use of System.out by a logger.(Υ‡ƒ‹ψÿÿÿÿ8¶“νε1
+S
+java:S1128"1Remove this unused import 'IslandModel.Location'.(‡‚γΒωÿÿÿÿ8ΫΡνε1

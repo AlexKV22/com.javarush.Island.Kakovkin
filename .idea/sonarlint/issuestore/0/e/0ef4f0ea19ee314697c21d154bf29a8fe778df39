@@ -1,0 +1,27 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(μ‡νδϊÿÿÿÿ8¤Νκε1
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(…½οÿÿÿÿÿ8―Νκε1
+n
+java:S1871"LThis branch's code block is the same as the block for the branch on line 24.(ΕΣ¶£ύÿÿÿÿ8Κ νε1
+i
+java:S1871"LThis branch's code block is the same as the block for the branch on line 24.(”«Ρ©8τΠνε1
+h
+java:S1871-"LThis branch's code block is the same as the block for the branch on line 24.(Ω¬w8κΧνε1
+i
+java:S1871$"LThis branch's code block is the same as the block for the branch on line 24.(λ½¨τ8ε©νε1
+i
+java:S18710"LThis branch's code block is the same as the block for the branch on line 24.(»»ψ―8µ‘νε1
+i
+java:S1871'"LThis branch's code block is the same as the block for the branch on line 24.(‚ϊύ‰8ώ¨ νε1
+i
+java:S1871!"LThis branch's code block is the same as the block for the branch on line 24.(Νρ8‹΅νε1
+i
+java:S1871*"LThis branch's code block is the same as the block for the branch on line 24.(΅ς8Ό“νε1
+R
+java:S2696W"6Make the enclosing method "static" or remove this set.(ΒΥΉQ8¶Ύνε1
+[
+java:S1854^"9Remove this useless assignment to local variable "death".(½άψΕϊÿÿÿÿ8¶Ύνε1
+X
+java:S2696_"6Make the enclosing method "static" or remove this set.(ΩÒΒύÿÿÿÿ8¶Ύνε1
+G	java:S106`"+Replace this use of System.out by a logger.(¶‘8¶Ύνε1

@@ -1,0 +1,13 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(“©ª€ùÿÿÿÿ8ÑÃºëå1
+J
+java:S1185"(Remove this method to simply inherit it.(…½ïÿÿÿÿÿ8ß´íå1
+X
+java:S2696="6Make the enclosing method "static" or remove this set.(ş÷ğãùÿÿÿÿ8­Ãëå1
+[
+java:S1854D"9Remove this useless assignment to local variable "death".(½ÜøÅúÿÿÿÿ8ºÍÄëå1
+X
+java:S2696E"6Make the enclosing method "static" or remove this set.(æ¶¬Ûûÿÿÿÿ8ÚÿÆëå1
+G	java:S106F"+Replace this use of System.out by a logger.(ê¼áÉ8¥‰Äëå1
+V
+java:S1128"9Remove this unused import 'AnimalPackage.Predator.Eagle'.(µ‡ñ8‚´íå1
