@@ -1,6 +1,4 @@
 
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(î–Æ8¬¸„å1
-X
-java:S2696%"6Make the enclosing method "static" or remove this set.(÷‘¯Ôøÿÿÿÿ8„íå1
 Z
-java:S1128"8Remove this unused import 'AnimalPackage.Predator.Bear'.(ô­ù’øÿÿÿÿ8¬é„íå1
+java:S1128"8Remove this unused import 'AnimalPackage.Predator.Bear'.(ô­ù’øÿÿÿÿ8éé¡Úæ1

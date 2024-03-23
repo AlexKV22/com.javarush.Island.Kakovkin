@@ -1,0 +1,15 @@
+
+7
+java:S1220""Move this file to a named package.8ÙÓÔæ1
+z	java:S116"YRename this field "MAX_ROW_ISLAND" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜°Ôßøÿÿÿÿ8ËèÓÔæ1
+z	java:S116"YRename this field "MIN_ROW_ISLAND" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğæ´¨ÿÿÿÿÿ8ÖâÔÔæ1
+u	java:S116"YRename this field "MAX_COL_ISLAND" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®ó‚î8“¢ÕÔæ1
+u	java:S116"YRename this field "MIN_COL_ISLAND" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İ’ì¡8ÂÂØÔæ1
+C
+java:S1170"!Make this final field static too.(˜°Ôßøÿÿÿÿ8ÚÓÔæ1
+C
+java:S1170"!Make this final field static too.(Ğæ´¨ÿÿÿÿÿ8ØÔÔæ1
+>
+java:S1170"!Make this final field static too.(®ó‚î8Ã…ÕÔæ1
+>
+java:S1170"!Make this final field static too.(İ’ì¡8ÿ¥ØÔæ1

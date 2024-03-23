@@ -12,10 +12,10 @@ public class Rabbit extends Herbivore {
         setMaxWeigth(2);
         setMaxCapacity(150);
         setMaxFoodNeeded(0.45);
-        this.moverRandom = this.randomizeClass.getMover().nextInt(0,2);
+        this.moverRandom = this.randomizeClass.getMover().nextInt(0,3);
         counter++;
-        setX(this.randomizeClass.getMover().nextInt(0,100));
-        setY(this.randomizeClass.getMover().nextInt(0,20));
+        setX(this.randomizeClass.getMover().nextInt(0,101));
+        setY(this.randomizeClass.getMover().nextInt(0,21));
     }
 
     @Override

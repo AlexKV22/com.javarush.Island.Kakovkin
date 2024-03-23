@@ -13,10 +13,10 @@ public class Mouse extends Herbivore {
         setMaxWeigth(0.05);
         setMaxCapacity(500);
         setMaxFoodNeeded(0.01);
-        this.moverRandom = this.randomizeClass.getMover().nextInt(0,1);
+        this.moverRandom = this.randomizeClass.getMover().nextInt(0,2);
         counter++;
-        setX(this.randomizeClass.getMover().nextInt(0,100));
-        setY(this.randomizeClass.getMover().nextInt(0,20));
+        setX(this.randomizeClass.getMover().nextInt(0,101));
+        setY(this.randomizeClass.getMover().nextInt(0,21));
     }
 
     @Override

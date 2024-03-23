@@ -16,10 +16,10 @@ public class Eagle extends Predator {
         setMaxWeigth(6);
         setMaxCapacity(20);
         setMaxFoodNeeded(1);
-        this.moverRandom = this.randomizeClass.getMover().nextInt(0,3);
+        this.moverRandom = this.randomizeClass.getMover().nextInt(0,4);
         counter++;
-        setX(this.randomizeClass.getMover().nextInt(0,100));
-        setY(this.randomizeClass.getMover().nextInt(0,20));
+        setX(this.randomizeClass.getMover().nextInt(0,101));
+        setY(this.randomizeClass.getMover().nextInt(0,21));
     }
 
     @Override

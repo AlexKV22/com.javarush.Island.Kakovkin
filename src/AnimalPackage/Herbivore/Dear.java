@@ -12,10 +12,10 @@ public class Dear extends Herbivore {
         setMaxWeigth(300);
         setMaxCapacity(20);
         setMaxFoodNeeded(50);
-        this.moverRandom = this.randomizeClass.getMover().nextInt(0,4);
+        this.moverRandom = this.randomizeClass.getMover().nextInt(0,5);
         counter++;
-        setX(this.randomizeClass.getMover().nextInt(0,100));
-        setY(this.randomizeClass.getMover().nextInt(0,20));
+        setX(this.randomizeClass.getMover().nextInt(0,101));
+        setY(this.randomizeClass.getMover().nextInt(0,21));
     }
 
     @Override

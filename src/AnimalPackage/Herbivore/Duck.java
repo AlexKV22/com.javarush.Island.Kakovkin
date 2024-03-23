@@ -12,10 +12,10 @@ public class Duck extends Herbivore {
         setMaxWeigth(1);
         setMaxCapacity(200);
         setMaxFoodNeeded(0.15);
-        this.moverRandom = this.randomizeClass.getMover().nextInt(0,4);
+        this.moverRandom = this.randomizeClass.getMover().nextInt(0,5);
         counter++;
-        setX(this.randomizeClass.getMover().nextInt(0,100));
-        setY(this.randomizeClass.getMover().nextInt(0,20));
+        setX(this.randomizeClass.getMover().nextInt(0,101));
+        setY(this.randomizeClass.getMover().nextInt(0,21));
     }
 
     @Override

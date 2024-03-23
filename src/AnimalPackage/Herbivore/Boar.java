@@ -12,10 +12,10 @@ public class Boar extends Herbivore {
        setMaxWeigth(400);
        setMaxCapacity(50);
        setMaxFoodNeeded(50);
-        this.moverRandom = this.randomizeClass.getMover().nextInt(0,2);
+        this.moverRandom = this.randomizeClass.getMover().nextInt(0,3);
         counter++;
-        setX(this.randomizeClass.getMover().nextInt(0,100));
-        setY(this.randomizeClass.getMover().nextInt(0,20));
+        setX(this.randomizeClass.getMover().nextInt(0,101));
+        setY(this.randomizeClass.getMover().nextInt(0,21));
     }
 
     @Override

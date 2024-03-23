@@ -1,10 +1,14 @@
 package AnimalPackage;
 import Interfaces.Eatable;
+import RandomizePackage.RandomizeClass;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
 
 public abstract class Animal implements Eatable {
     private double maxWeigth;
     private int maxCapacity;
-    private int maxSpeed;
     private double maxFoodNeeded;
     private int x;
     private int y;
@@ -13,9 +17,8 @@ public abstract class Animal implements Eatable {
         return x;
     }
 
-    public int setX(int x) {
+    public void setX(int x) {
         this.x = x;
-        return x;
     }
 
     public int getY() {
@@ -40,14 +43,6 @@ public abstract class Animal implements Eatable {
 
     public void setMaxCapacity(int maxCapacity) {
         this.maxCapacity = maxCapacity;
-    }
-
-    public int getMaxSpeed() {
-        return maxSpeed;
-    }
-
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
     }
 
     public double getMaxFoodNeeded() {

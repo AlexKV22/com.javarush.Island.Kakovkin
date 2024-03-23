@@ -1,2 +1,10 @@
 
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ü°­©úÿÿÿÿ8È„çàå1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ü°­©úÿÿÿÿ8Ž‚¾Õæ1
+X
+java:S1128"<Remove this unused import 'RandomizePackage.RandomizeClass'.(íí~8¬¸×æ1
+G
+java:S1128"*Remove this unused import 'lombok.Getter'.(ùÒµÙ8¾¾Õæ1
+]
+java:S1128";Remove this unused import 'lombok.RequiredArgsConstructor'.(ÑØŽúøÿÿÿÿ8•‚¾Õæ1
+G
+java:S1128"*Remove this unused import 'lombok.Setter'.(ó¸çµ8¾¾Õæ1

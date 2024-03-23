@@ -13,10 +13,10 @@ public class Wolf extends Predator {
         setMaxWeigth(50);
         setMaxCapacity(30);
         setMaxFoodNeeded(8);
-        this.moverRandom = this.randomizeClass.getMover().nextInt(0,3);
+        this.moverRandom = this.randomizeClass.getMover().nextInt(0,4);
         counter++;
-        setX(this.randomizeClass.getMover().nextInt(0,100));
-        setY(this.randomizeClass.getMover().nextInt(0,20));
+        setX(this.randomizeClass.getMover().nextInt(0,101));
+        setY(this.randomizeClass.getMover().nextInt(0,21));
     }
 
     @Override

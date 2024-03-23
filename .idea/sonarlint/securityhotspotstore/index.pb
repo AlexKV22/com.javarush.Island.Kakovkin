@@ -47,3 +47,15 @@ K
 src/PlantPackage/Plant.java,3\5\352ccd8b4d874a1644146d913f1d75b978c1170e
 X
 (src/RandomizePackage/RandomizeClass.java,b\2\b291397aea35d5155d429af484b8b98be329715f
+A
+src/Settings.java,4\1\410a3739cf26e4346563fcd0af4fa4f3a34ce26f
+J
+src/Settings/Settings.java,c\9\c91284fd94135d875079c7d6155b100f6bfea162
+P
+ com.javarush.island.Kakovkin.iml,3\9\398f0442215d572122b996b9d21eb27ddfedd591
+Å
+Q.idea/sonarlint/securityhotspotstore/4/1/410a3739cf26e4346563fcd0af4fa4f3a34ce26f,1\e\1ed3d47fb4cdc7e08784353e81f44a9ac3436afc
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e

@@ -4,82 +4,130 @@ import AnimalPackage.Herbivore.*;
 import IslandModel.Island;
 import RandomizePackage.RandomizeClass;
 import IslandModel.Location;
+import Settings.Settings;
+import lombok.AllArgsConstructor;
+import lombok.Setter;
+
+import java.util.Set;
 
 public class Bear extends Predator {
-    private RandomizeClass randomizeClass = new RandomizeClass();
     private int moverRandom;
-    private static int counter = 0;
+    private int counter = 0;
+    private double eat;
 
 
     public Bear() {
-        setMaxWeigth(500);
-        setMaxCapacity(5);
-        setMaxFoodNeeded(80);
-        this.moverRandom = this.randomizeClass.getMover().nextInt(0,2);
+        setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
+        setMaxCapacity(Settings.MAX_CAPACITY_IN_ONE_CELL_BEAR);
+        setMaxFoodNeeded(Settings.MAX_FOOD_NEEDED_BEAR);
         counter++;
-        setX(this.randomizeClass.getMover().nextInt(0,100));
-        setY(this.randomizeClass.getMover().nextInt(0,20));
-
-
+        setX(RandomizeClass.getRandom(Settings.MIN_ROW_ISLAND,Settings.MAX_ROW_ISLAND));
+        setY(RandomizeClass.getRandom(Settings.MIN_COL_ISLAND, Settings.MAX_COL_ISLAND));
     }
 
     @Override
     public void eat(Object food) {
-        if (food instanceof Horse && randomizeClass.getRandomEat() < 0.4) {
-            setMaxWeigth(getMaxWeigth() + ((Herbivore) food).getMaxWeigth());
+        this.eat = RandomizeClass.getRandom();
+
+        if (food instanceof Horse && eat < 0.4) {
+            if(((Horse) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
+                setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
+            }
             super.eat(food);
-        } else if (food instanceof Dear || food instanceof Rabbit && randomizeClass.getRandomEat() < 0.8) {
-            setMaxWeigth(getMaxWeigth() + ((Herbivore) food).getMaxWeigth());
+        }
+
+        else if (food instanceof Dear && eat < 0.8) {
+            if(((Dear) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
+                setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
+            }
             super.eat(food);
-        } else if (food instanceof Mouse && randomizeClass.getRandomEat() < 0.9) {
-            setMaxWeigth(getMaxWeigth() + ((Herbivore) food).getMaxWeigth());
+        }
+
+        else if (food instanceof Rabbit && eat < 0.8) {
+            if(((Rabbit) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
+                setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
+            }
             super.eat(food);
-        } else if (food instanceof Sheep || food instanceof Goat && randomizeClass.getRandomEat() < 0.7) {
-            setMaxWeigth(getMaxWeigth() + ((Herbivore) food).getMaxWeigth());
+        }
+
+        else if (food instanceof Mouse && eat < 0.9) {
+            if(((Mouse) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
+                setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
+            }
             super.eat(food);
-        } else if (food instanceof Boar && randomizeClass.getRandomEat() < 0.5) {
-            setMaxWeigth(getMaxWeigth() + ((Herbivore) food).getMaxWeigth());
+        }
+
+        else if (food instanceof Sheep || eat < 0.7) {
+            if(((Sheep) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
+                setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
+            }
             super.eat(food);
-        } else if (food instanceof Buffalo && randomizeClass.getRandomEat() < 0.2) {
-            setMaxWeigth(getMaxWeigth() + ((Herbivore) food).getMaxWeigth());
+        }
+
+        else if (food instanceof Goat && eat < 0.7) {
+            if(((Goat) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
+                setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
+            }
             super.eat(food);
-        } else if (food instanceof Duck && randomizeClass.getRandomEat() < 0.1) {
-            setMaxWeigth(getMaxWeigth() + ((Herbivore) food).getMaxWeigth());
+        }
+
+        else if (food instanceof Boar && eat < 0.5) {
+            if(((Boar) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
+                setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
+            }
+            super.eat(food);
+        }
+
+        else if (food instanceof Buffalo && eat < 0.2) {
+            if(((Buffalo) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
+                setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
+            }
+            super.eat(food);
+        }
+
+        else if (food instanceof Duck && eat < 0.1) {
+            if(((Duck) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
+                setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
+            }
             super.eat(food);
         }
     }
 
 
     public void eat(Snake food) {
-        if (randomizeClass.getRandomEat() < 0.8) {
-            setMaxWeigth(getMaxWeigth() + food.getMaxWeigth());
+        if (eat < 0.8) {
+            if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
+                setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
+            }
             food = null;
         }
     }
 
     @Override
     public void move() {
-        if (randomizeClass.getRandomEat() < 0.25) {
+        this.moverRandom = RandomizeClass.getRandom(0, Settings.MAX_SPEED_BEAR);
+        this.eat = RandomizeClass.getRandom();
+        if (eat < 0.25) {
             chooseDirectionAhead(this.getX());
-            setMaxWeigth(getMaxWeigth() - 10);
+            setMaxWeigth(getMaxWeigth() - Settings.MINUS_HEALTH_ONE_STEP_BEAR);
             if (getMaxWeigth() <= 0) {
                 die(this);
             }
-        } else if (randomizeClass.getRandomEat() > 0.25 && randomizeClass.getRandomEat() < 0.5) {
+        } else if (eat > 0.25 && eat < 0.5) {
             chooseDirectionReverse(this.getX());
-            setMaxWeigth(getMaxWeigth() - 10);
+            setMaxWeigth(getMaxWeigth() - Settings.MINUS_HEALTH_ONE_STEP_BEAR);
             if (getMaxWeigth() <= 0) {
                 die(this);
             }
-        } else if (randomizeClass.getRandomEat() > 0.5 && randomizeClass.getRandomEat() < 0.75) {
+        } else if (eat > 0.5 && eat < 0.75) {
             chooseDirectionLeft(this.getY());
-            setMaxWeigth(getMaxWeigth() - 10);
+            setMaxWeigth(getMaxWeigth() - Settings.MINUS_HEALTH_ONE_STEP_BEAR);
             if (getMaxWeigth() <= 0) {
                 die(this);
             }
-        } else if (randomizeClass.getRandomEat() > 0.75 && randomizeClass.getRandomEat() < 0.1) {
+        } else if (eat > 0.75 && eat < 1) {
             chooseDirectionRight(this.getY());
-            setMaxWeigth(getMaxWeigth() - 10);
+            setMaxWeigth(getMaxWeigth() - Settings.MINUS_HEALTH_ONE_STEP_BEAR);
             if (getMaxWeigth() <= 0) {
                 die(this);
             }
@@ -88,9 +136,9 @@ public class Bear extends Predator {
 
     @Override
     public void multiple(Animal partner) throws CloneNotSupportedException {
-        if (Bear.counter < getMaxCapacity() && this.getClass().equals(partner.getClass())) {
+        if (counter < getMaxCapacity() && this.getClass().equals(partner.getClass())) {
             this.clone();
-            Bear.counter++;
+            counter++;
         }
     }
 
@@ -98,7 +146,7 @@ public class Bear extends Predator {
     public void die(Object death) {
         if (death instanceof Bear && getMaxWeigth() <= 0) {
             death = null;
-            Bear.counter--;
+            counter--;
             System.out.println("Медведь, находящийся в координатах: х - " + getX() + ", y - " + getY() + "умер от голода :(((");
         }
     }
@@ -144,7 +192,7 @@ public class Bear extends Predator {
         }
     }
 
-    public static int getCounter() {
+    public int getCounter() {
         return counter;
     }
 }

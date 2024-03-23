@@ -6,9 +6,12 @@ public class RandomizeClass {
     private double randomEat;
     private ThreadLocalRandom mover;
 
-    public RandomizeClass() {
-        randomEat = ThreadLocalRandom.current().nextDouble(0,1);
-        this.mover = ThreadLocalRandom.current();
+    public static double getRandom() {
+        return ThreadLocalRandom.current().nextDouble(0, 1);
+    }
+
+    public static int getRandom(int from, int to) {
+        return ThreadLocalRandom.current().nextInt(from, to +1);
     }
 
     public double getRandomEat() {

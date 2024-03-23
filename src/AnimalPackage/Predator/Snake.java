@@ -16,10 +16,10 @@ public class Snake extends Predator {
         setMaxWeigth(15);
         setMaxCapacity(30);
         setMaxFoodNeeded(3);
-        this.moverRandom = this.randomizeClass.getMover().nextInt(0,1);
+        this.moverRandom = this.randomizeClass.getMover().nextInt(0,2);
         counter++;
-        setX(this.randomizeClass.getMover().nextInt(0,100));
-        setY(this.randomizeClass.getMover().nextInt(0,20));
+        setX(this.randomizeClass.getMover().nextInt(0,101));
+        setY(this.randomizeClass.getMover().nextInt(0,21));
     }
 
     @Override

@@ -10,8 +10,8 @@ public class Caterpillar extends Herbivore {
         setMaxWeigth(0.01);
         setMaxCapacity(1000);
         counter++;
-        setX(this.randomizeClass.getMover().nextInt(0,100));
-        setY(this.randomizeClass.getMover().nextInt(0,20));
+        setX(this.randomizeClass.getMover().nextInt(0,101));
+        setY(this.randomizeClass.getMover().nextInt(0,21));
     }
 
     @Override

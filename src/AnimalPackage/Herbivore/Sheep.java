@@ -12,10 +12,10 @@ public class Sheep extends Herbivore {
         setMaxWeigth(70);
         setMaxCapacity(140);
         setMaxFoodNeeded(15);
-        this.moverRandom = this.randomizeClass.getMover().nextInt(0,3);
+        this.moverRandom = this.randomizeClass.getMover().nextInt(0,4);
         counter++;
-        setX(this.randomizeClass.getMover().nextInt(0,100));
-        setY(this.randomizeClass.getMover().nextInt(0,20));
+        setX(this.randomizeClass.getMover().nextInt(0,101));
+        setY(this.randomizeClass.getMover().nextInt(0,21));
     }
 
     @Override

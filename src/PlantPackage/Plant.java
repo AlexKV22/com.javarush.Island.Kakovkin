@@ -3,15 +3,16 @@ package PlantPackage;
 import AnimalPackage.Animal;
 import AnimalPackage.Predator.Bear;
 import Interfaces.Eatable;
+import Settings.Settings;
 
 public class Plant implements Eatable {
     private double maxWeigth;
     private int maxCapacity;
-    private static int counter = 0;
+    private int counter = 0;
 
     public Plant() {
         this.maxWeigth = 1;
-        this.maxCapacity = 200;
+        this.maxCapacity = Settings.MAX_CAPACITY_PLANT;
         counter++;
     }
 
@@ -27,14 +28,10 @@ public class Plant implements Eatable {
         return maxCapacity;
     }
 
-    public void setMaxCapacity(int maxCapacity) {
-        this.maxCapacity = maxCapacity;
-    }
-
     public void multiple(Animal partner) throws CloneNotSupportedException {
-        if (Plant.counter < getMaxCapacity() && this.getClass().equals(partner.getClass())) {
+        if (counter < getMaxCapacity() && this.getClass().equals(partner.getClass())) {
             this.clone();
-            Plant.counter++;
+            counter++;
         }
     }
 }
