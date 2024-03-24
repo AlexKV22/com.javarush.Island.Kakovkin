@@ -54,7 +54,8 @@ public abstract class Animal implements Eatable {
         this.maxFoodNeeded = maxFoodNeeded;
     }
 
-    public abstract void eat(Object food);
+    public void eat(Object food) {
+    }
 
     public abstract void move();
 

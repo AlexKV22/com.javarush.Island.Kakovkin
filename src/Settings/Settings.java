@@ -7,6 +7,7 @@ public class Settings {
     public static final int MIN_COL_ISLAND = 0;
 
     public static final int MAX_CAPACITY_PLANT = 200;
+    public static final int MAX_WEIGHT_PLANT = 1;
 
 
     public static final int MAX_SPEED_BEAR = 2;
