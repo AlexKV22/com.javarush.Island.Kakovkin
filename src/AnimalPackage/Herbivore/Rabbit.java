@@ -20,9 +20,11 @@ public class Rabbit extends Herbivore {
     }
 
     @Override
-    public void eat(Object food) {
-        ((Plant) food).setCounter(getCounter() - 1);
-        super.eat(food);
+    public void eat(Plant food) {
+        if(food.getX() == this.getX() && food.getY() == this.getY()) {
+            food.setCounter(getCounter() - 1);
+            super.eat(food);
+        }
     }
 
     @Override
@@ -59,7 +61,7 @@ public class Rabbit extends Herbivore {
 
     @Override
     public void multiple(Animal partner) throws CloneNotSupportedException {
-        if (counter < getMaxCapacity() && this.getClass().equals(partner.getClass())) {
+        if (counter < getMaxCapacity() && this.getClass().equals(partner.getClass()) && partner.getX() == this.getX() && partner.getY() == this.getY()) {
             this.clone();
             counter++;
         }

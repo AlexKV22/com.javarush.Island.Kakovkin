@@ -1,21 +1,17 @@
 
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ì‡íäúÿÿÿÿ8ÕËáæ1
+v
+java:S1104"YMake atomicInteger a static final constant or non-public and provide accessors if needed.(¯ÎÌ©8Å¿Òßç1
+P
+java:S1444"3Make this "public static atomicInteger" field final(¯ÎÌ©8Å¿Òßç1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ì‡íäúÿÿÿÿ8µ• Ñç1
 h
-java:S6201"FReplace this instanceof check and cast with 'instanceof Rabbit rabbit'(¾”ÁÓùÿÿÿÿ8åËáæ1
-h
-java:S6201"FReplace this instanceof check and cast with 'instanceof Rabbit rabbit'(¾”ÁÓùÿÿÿÿ8åËáæ1
-f
-java:S6201""DReplace this instanceof check and cast with 'instanceof Mouse mouse'(âˆªÀùÿÿÿÿ8æËáæ1
-f
-java:S6201""DReplace this instanceof check and cast with 'instanceof Mouse mouse'(âˆªÀùÿÿÿÿ8æËáæ1
+java:S6201"FReplace this instanceof check and cast with 'instanceof Rabbit rabbit'(š¨†³ıÿÿÿÿ8Ì• Ñç1
+a
+java:S6201$"DReplace this instanceof check and cast with 'instanceof Mouse mouse'(‰ïïá8Í• Ñç1
 d
-java:S6201*"BReplace this instanceof check and cast with 'instanceof Duck duck'(”Æ±Ôıÿÿÿÿ8çËáæ1
-d
-java:S6201*"BReplace this instanceof check and cast with 'instanceof Duck duck'(”Æ±Ôıÿÿÿÿ8èËáæ1
+java:S6201,"BReplace this instanceof check and cast with 'instanceof Duck duck'(ÃÒ¶ìúÿÿÿÿ8Î• Ñç1
 U
-java:S18549"8Remove this useless assignment to local variable "food".(üË’ª8éËáæ1
+java:S1854;"8Remove this useless assignment to local variable "food".(üË’ª8Ğ• Ñç1
 [
-java:S1854g"9Remove this useless assignment to local variable "death".(½ÜøÅúÿÿÿÿ8ïËáæ1
-L	java:S106i"+Replace this use of System.out by a logger.(¹ÑŠûüÿÿÿÿ8ñËáæ1
-L
-java:S1128"/Remove this unused import 'IslandModel.Island'.(ñŒîé8 …Âææ1
+java:S1854i"9Remove this useless assignment to local variable "death".(½ÜøÅúÿÿÿÿ8Ô• Ñç1
+L	java:S106k"+Replace this use of System.out by a logger.(¹ÑŠûüÿÿÿÿ8Õ• Ñç1

@@ -1,7 +1,7 @@
 
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(“©ª€ùÿÿÿÿ
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(“©ª€ùÿÿÿÿ8ýµûÑç1
 t
-java:S1450"RRemove the "eat" field and declare it as a local variable in the relevant methods.(¸¡»¸ÿÿÿÿÿ8·ö«ææ1
-G	java:S106H"+Replace this use of System.out by a logger.(Ê¾ôð8®¯¡ìå1
+java:S1450"RRemove the "eat" field and declare it as a local variable in the relevant methods.(¸¡»¸ÿÿÿÿÿ8†¶ûÑç1
+G	java:S106J"+Replace this use of System.out by a logger.(Ê¾ôð8Œ¶ûÑç1
 L
-java:S1128"/Remove this unused import 'IslandModel.Island'.(ñŒîé8å‚Âææ1
+java:S1128"/Remove this unused import 'IslandModel.Island'.(ñŒîé8ôÁüßç1

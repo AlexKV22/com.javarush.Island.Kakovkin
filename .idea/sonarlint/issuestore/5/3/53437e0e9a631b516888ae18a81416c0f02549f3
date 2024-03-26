@@ -1,5 +1,7 @@
 
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(“©ª€ùÿÿÿÿ8±÷ôŠå1
-F	java:S106S"+Replace this use of System.out by a logger.(»Åv8ÔÔ¶åæ1
-L
-java:S1128"/Remove this unused import 'IslandModel.Island'.(ñŒîé8×ƒÂææ1
+v
+java:S1104"YMake atomicInteger a static final constant or non-public and provide accessors if needed.(¯ÎÌ©8éâçßç1
+P
+java:S1444"3Make this "public static atomicInteger" field final(¯ÎÌ©8êâçßç1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(“©ª€ùÿÿÿÿ8³­ãÑç1
+F	java:S106W"+Replace this use of System.out by a logger.(»Åv8Ä­ãÑç1

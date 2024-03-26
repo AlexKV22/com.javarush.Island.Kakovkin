@@ -1,45 +1,29 @@
 
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ì‡íäúÿÿÿÿ8°†¯ãæ1
-t
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.(…½ïÿÿÿÿÿ8º†¯ãæ1
-a
-java:S6201"DReplace this instanceof check and cast with 'instanceof Horse horse'(Ò’Ğ—8è´ãæ1
-a
-java:S6201"DReplace this instanceof check and cast with 'instanceof Horse horse'(Ò’Ğ—8Ãöµãæ1
-d
-java:S6201""BReplace this instanceof check and cast with 'instanceof Dear dear'(ÄÒ­ÿúÿÿÿÿ8¿ç¾ãæ1
-d
-java:S6201""BReplace this instanceof check and cast with 'instanceof Dear dear'(ÄÒ­ÿúÿÿÿÿ8Æ…¿ãæ1
-c
-java:S6201*"FReplace this instanceof check and cast with 'instanceof Rabbit rabbit'(¡ş8Ôö¿ãæ1
-c
-java:S6201*"FReplace this instanceof check and cast with 'instanceof Rabbit rabbit'(¡ş8…˜Àãæ1
+v
+java:S1104"YMake atomicInteger a static final constant or non-public and provide accessors if needed.(¯ÎÌ©8š¦Õßç1
+P
+java:S1444"3Make this "public static atomicInteger" field final(¯ÎÌ©8›¦Õßç1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ì‡íäúÿÿÿÿ8¦Õßç1
+n
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.(üÔök8Ç¨Õßç1
 f
-java:S62012"DReplace this instanceof check and cast with 'instanceof Mouse mouse'(¶¯Èşÿÿÿÿ8âŠÃãæ1
+java:S6201"DReplace this instanceof check and cast with 'instanceof Horse horse'(ì•Èÿÿÿÿÿ8È¨Õßç1
+d
+java:S6201$"BReplace this instanceof check and cast with 'instanceof Dear dear'(Ã¿˜âûÿÿÿÿ8É¨Õßç1
+h
+java:S6201,"FReplace this instanceof check and cast with 'instanceof Rabbit rabbit'(Ì¸¥“øÿÿÿÿ8Ë¨Õßç1
 f
-java:S62012"DReplace this instanceof check and cast with 'instanceof Mouse mouse'(¶¯Èşÿÿÿÿ8®·Ããæ1
+java:S62014"DReplace this instanceof check and cast with 'instanceof Mouse mouse'(ÃÇ¯ùÿÿÿÿ8Ì¨Õßç1
 a
-java:S6201:"DReplace this instanceof check and cast with 'instanceof Sheep sheep'(ÕŸ‰ö8ŞÕÆãæ1
-a
-java:S6201:"DReplace this instanceof check and cast with 'instanceof Sheep sheep'(ÕŸ‰ö8ÿóÆãæ1
-^
-java:S6201B"BReplace this instanceof check and cast with 'instanceof Goat goat'(´Íõl8ªæÇãæ1
-^
-java:S6201B"BReplace this instanceof check and cast with 'instanceof Goat goat'(´Íõl8Ö„Èãæ1
+java:S6201<"DReplace this instanceof check and cast with 'instanceof Sheep sheep'(¥ä¯ÿ8Î¨Õßç1
 _
-java:S6201J"BReplace this instanceof check and cast with 'instanceof Boar boar'(ÀæÖÏ8İÉãæ1
+java:S6201D"BReplace this instanceof check and cast with 'instanceof Goat goat'( æ8Ï¨Õßç1
+d
+java:S6201L"BReplace this instanceof check and cast with 'instanceof Boar boar'(¥øÇÿÿÿÿÿ8Ğ¨Õßç1
+j
+java:S6201T"HReplace this instanceof check and cast with 'instanceof Buffalo buffalo'(¼âÄğùÿÿÿÿ8Ñ¨Õßç1
 _
-java:S6201J"BReplace this instanceof check and cast with 'instanceof Boar boar'(ÀæÖÏ8ÒÁÉãæ1
-e
-java:S6201R"HReplace this instanceof check and cast with 'instanceof Buffalo buffalo'(ºÒ›è8ö¬Êãæ1
-e
-java:S6201R"HReplace this instanceof check and cast with 'instanceof Buffalo buffalo'(ºÒ›è8îÒÊãæ1
-d
-java:S6201Z"BReplace this instanceof check and cast with 'instanceof Duck duck'(ãæ¿Ğüÿÿÿÿ8‹¿Ëãæ1
-d
-java:S6201Z"BReplace this instanceof check and cast with 'instanceof Duck duck'(ãæ¿Ğüÿÿÿÿ8°ÚËãæ1
+java:S6201\"BReplace this instanceof check and cast with 'instanceof Duck duck'(œûÙ8Ò¨Õßç1
 \
-java:S1854"9Remove this useless assignment to local variable "death".(½ÜøÅúÿÿÿÿ8Â†¯ãæ1
-H	java:S106"+Replace this use of System.out by a logger.(¶‘š8Ã†¯ãæ1
-L
-java:S1128"/Remove this unused import 'IslandModel.Island'.(ñŒîé8¼ˆÂææ1
+java:S1854"9Remove this useless assignment to local variable "death".(½ÜøÅúÿÿÿÿ8â¨Õßç1
+H	java:S106’"+Replace this use of System.out by a logger.(¶‘š8øçÕßç1

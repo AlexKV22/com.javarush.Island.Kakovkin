@@ -1,9 +1,11 @@
 
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(“©ª€ùÿÿÿÿ8æÛÒäæ1
+v
+java:S1104"YMake atomicInteger a static final constant or non-public and provide accessors if needed.(¯ÎÌ©8™¼áßç1
+P
+java:S1444"3Make this "public static atomicInteger" field final(¯ÎÌ©8™¼áßç1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(“©ª€ùÿÿÿÿ8×¸ÜÑç1
 t
-java:S1450"RRemove the "eat" field and declare it as a local variable in the relevant methods.(¸¡»¸ÿÿÿÿÿ8†ÅÔäæ1
+java:S1450"RRemove the "eat" field and declare it as a local variable in the relevant methods.(¸¡»¸ÿÿÿÿÿ8æ¸ÜÑç1
 [
-java:S1854G"9Remove this useless assignment to local variable "death".(½ÜøÅúÿÿÿÿ8ñÛÒäæ1
-G	java:S106I"+Replace this use of System.out by a logger.(îş¤Ò8òÛÒäæ1
-L
-java:S1128"/Remove this unused import 'IslandModel.Island'.(ñŒîé8ü†Âææ1
+java:S1854K"9Remove this useless assignment to local variable "death".(½ÜøÅúÿÿÿÿ8î¸ÜÑç1
+G	java:S106M"+Replace this use of System.out by a logger.(îş¤Ò8ï¸ÜÑç1

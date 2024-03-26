@@ -6,28 +6,32 @@ import PlantPackage.Plant;
 import RandomizePackage.RandomizeClass;
 import Settings.Settings;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Boar extends Herbivore {
     private int moverRandom;
-    private int counter = 0;
+    public static AtomicInteger atomicInteger = new AtomicInteger(0);
     private double eat;
     public Boar() {
        setMaxWeigth(Settings.MAX_WEIGHT_BOAR);
        setMaxCapacity(Settings.MAX_CAPACITY_IN_ONE_CELL_BOAR);
        setMaxFoodNeeded(Settings.MAX_FOOD_NEEDED_BOAR);
-        counter++;
         setX(RandomizeClass.getRandom(Settings.MIN_ROW_ISLAND,Settings.MAX_ROW_ISLAND));
         setY(RandomizeClass.getRandom(Settings.MIN_COL_ISLAND, Settings.MAX_COL_ISLAND));
+        atomicInteger.getAndIncrement();
     }
 
     @Override
-    public void eat(Object food) {
-        ((Plant) food).setCounter(getCounter() - 1);
-        super.eat(food);
+    public void eat(Plant food) {
+        if(food.getX() == this.getX() && food.getY() == this.getY()) {
+            food.setCounter(getCounter() - 1);
+            super.eat(food);
+        }
     }
 
     public void eat(Mouse food) {
         this.eat = RandomizeClass.getRandom();
-        if (eat < 0.5) {
+        if (eat < 0.5 && food.getX() == this.getX() && food.getY() == this.getY()) {
             food.setCounter(getCounter() - 1);
             super.eat(food);
         }
@@ -35,7 +39,7 @@ public class Boar extends Herbivore {
 
     public void eat(Caterpillar food) {
         this.eat = RandomizeClass.getRandom();
-        if (eat < 0.9) {
+        if (eat < 0.9 && food.getX() == this.getX() && food.getY() == this.getY()) {
             food.setCounter(getCounter() - 1);
             super.eat(food);
         }
@@ -75,16 +79,16 @@ public class Boar extends Herbivore {
 
     @Override
     public void multiple(Animal partner) throws CloneNotSupportedException {
-        if (counter < getMaxCapacity() && this.getClass().equals(partner.getClass())) {
+        if (atomicInteger.get() < getMaxCapacity() && this.getClass().equals(partner.getClass()) && partner.getX() == this.getX() && partner.getY() == this.getY()) {
             this.clone();
-            counter++;
+            atomicInteger.getAndIncrement();
         }
     }
 
     @Override
     public void die(Object death) {
         if (death instanceof Boar && getMaxWeigth() <= 0) {
-            counter--;
+            atomicInteger.getAndDecrement();
             System.out.println("Кабан, находящийся в координатах: х - " + getX() + ", y - " + getY() + "умер от голода :(((");
         }
     }
@@ -131,13 +135,5 @@ public class Boar extends Herbivore {
             }
             this.setY(result);
         }
-    }
-
-    public int getCounter() {
-        return counter;
-    }
-
-    public void setCounter(int counter) {
-        this.counter = counter;
     }
 }

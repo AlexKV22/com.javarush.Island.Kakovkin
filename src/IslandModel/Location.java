@@ -4,12 +4,16 @@ import AnimalPackage.Animal;
 import AnimalPackage.Herbivore.*;
 import AnimalPackage.Predator.*;
 import PlantPackage.Plant;
+import RandomizePackage.RandomizeClass;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Location extends Thread {
 
   public ArrayList<Animal> animal;
+  public ArrayList<Predator> predators;
+  public ArrayList<Herbivore> herbivores;
   public ArrayList<Plant> plant;
 
    public Location() {
@@ -18,7 +22,7 @@ public class Location extends Thread {
    }
 
    public void startCell() {
-       for (int i = 0; i < 1; i++) {
+       for (int i = 0; i < 2; i++) {
            animal.add(new Bear());
            animal.add(new Fox());
            animal.add(new Snake());
@@ -40,15 +44,36 @@ public class Location extends Thread {
        }
    }
 
-    @Override
-    public void run() {
-        for (Animal animal1 : animal) {
-            animal1.move();
-            animal1.eat(animal1);
-            try {
-                animal1.multiple(animal1);
-            } catch (CloneNotSupportedException e) {
-                throw new RuntimeException(e);
+
+    public void startLive() {
+        for (Animal someAnimal : animal) {
+
+            if (someAnimal != null) {
+                someAnimal.move();
+
+                if (someAnimal instanceof Predator) {
+                    predators.add((Predator) someAnimal);
+                } else {
+                    herbivores.add((Herbivore) someAnimal);
+                }
+
+                for (Predator predator : predators) {
+                    for (Herbivore herbivore : herbivores) {
+                        predator.eat(herbivore);
+                        System.out.println(predator.getX());
+                    }
+                }
+                for (Herbivore herbivore : herbivores ) {
+                    for (Plant plant1 : plant ) {
+                        herbivore.eat(plant1);
+                    }
+                }
+
+                try {
+                    someAnimal.multiple(someAnimal);
+                } catch (CloneNotSupportedException e) {
+                    throw new RuntimeException(e);
+                }
             }
         }
 
@@ -61,7 +86,6 @@ public class Location extends Thread {
         }
     }
 }
-
 
 
 

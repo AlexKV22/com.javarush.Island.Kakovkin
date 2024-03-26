@@ -8,7 +8,7 @@ import IslandModel.Location;
 public abstract class Predator extends Animal {
 
     @Override
-    public void eat(Object food) {
+    public void eat(Herbivore food) {
         food = null;
     }
 

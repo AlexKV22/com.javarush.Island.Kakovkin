@@ -4,9 +4,7 @@
 java:S1226"AIntroduce a new variable instead of reusing the parameter "food".(üË’ª8¯’¢êå1
 U
 java:S1854"8Remove this useless assignment to local variable "food".(üË’ª8³’¢êå1
-`
-java:S1128">Remove this unused import 'AnimalPackage.Herbivore.Herbivore'.(¹ı½¹ÿÿÿÿÿ8¶åŠíå1
 L
-java:S1128"/Remove this unused import 'IslandModel.Island'.(ñŒîé8¶åŠíå1
+java:S1128"/Remove this unused import 'IslandModel.Island'.(ñŒîé8ğûùÙç1
 S
-java:S1128"1Remove this unused import 'IslandModel.Location'.(‡‚ãÂùÿÿÿÿ8¶åŠíå1
+java:S1128"1Remove this unused import 'IslandModel.Location'.(‡‚ãÂùÿÿÿÿ8ğûùÙç1

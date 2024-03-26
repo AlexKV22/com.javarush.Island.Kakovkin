@@ -1,12 +1,32 @@
 
-g	java:S1123"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8è”ñƒç1
-g	java:S112;"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ì‚õƒç1
+g	java:S112K"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8»‘ê×ç1
+g	java:S112T"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¼‘ê×ç1
 ƒ
-java:S1319"fThe type of "animal" should be an interface such as "List" rather than the implementation "ArrayList".(®´…ú8ê”ñƒç1
+java:S1319"fThe type of "animal" should be an interface such as "List" rather than the implementation "ArrayList".(®´…ú8½‘ê×ç1
+†
+java:S1319"iThe type of "predators" should be an interface such as "List" rather than the implementation "ArrayList".(¹øÔ²8½‘ê×ç1
+Œ
+java:S1319"jThe type of "herbivores" should be an interface such as "List" rather than the implementation "ArrayList".(¯’„æøÿÿÿÿ8½‘ê×ç1
 ‚
-java:S1319"eThe type of "plant" should be an interface such as "List" rather than the implementation "ArrayList".(æˆƒæ8ê”ñƒç1
+java:S1319"eThe type of "plant" should be an interface such as "List" rather than the implementation "ArrayList".(æˆƒæ8½‘ê×ç1
 o
-java:S1104"RMake animal a static final constant or non-public and provide accessors if needed.(®´…ú8ê”ñƒç1
+java:S1104"RMake animal a static final constant or non-public and provide accessors if needed.(®´…ú8½‘ê×ç1
+r
+java:S1104"UMake predators a static final constant or non-public and provide accessors if needed.(¹øÔ²8½‘ê×ç1
+x
+java:S1104"VMake herbivores a static final constant or non-public and provide accessors if needed.(¯’„æøÿÿÿÿ8½‘ê×ç1
 n
-java:S1104"QMake plant a static final constant or non-public and provide accessors if needed.(æˆƒæ8ê”ñƒç1
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(éü·ş8ë”ñƒç1
+java:S1104"QMake plant a static final constant or non-public and provide accessors if needed.(æˆƒæ8½‘ê×ç1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(éü·ş8¾‘ê×ç1
+]
+java:S2134"@Don't extend "Thread", since the "run" method is not overridden.(Ş¿Ã¯8—’ê×ç1
+o
+java:S37760"RRefactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.(ÕªâŠ8œ’ê×ç1
+l
+java:S62016"JReplace this instanceof check and cast with 'instanceof Predator predator'(¨ÂÎ¡ÿÿÿÿÿ8œ’ê×ç1
+F	java:S106?"+Replace this use of System.out by a logger.(éº–8’ê×ç1
+X
+java:S1128"<Remove this unused import 'RandomizePackage.RandomizeClass'.(íí~8’ê×ç1
+O
+java:S1128
+"-Remove this unused import 'java.util.Random'.(èøÉ›ùÿÿÿÿ8’ê×ç1

@@ -1,5 +1,8 @@
 package AnimalPackage;
+import AnimalPackage.Herbivore.Herbivore;
+import AnimalPackage.Predator.Predator;
 import Interfaces.Eatable;
+import PlantPackage.Plant;
 import RandomizePackage.RandomizeClass;
 import Settings.Settings;
 import lombok.Getter;
@@ -54,7 +57,10 @@ public abstract class Animal implements Eatable {
         this.maxFoodNeeded = maxFoodNeeded;
     }
 
-    public void eat(Object food) {
+    public void eat(Plant food) {
+    }
+
+    public void eat(Herbivore food) {
     }
 
     public abstract void move();

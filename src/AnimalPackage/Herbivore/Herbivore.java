@@ -5,10 +5,8 @@ import PlantPackage.Plant;
 
 public abstract class Herbivore extends Animal {
     @Override
-    public void eat(Object food) {
-        if (food instanceof Plant) {
-            food = null;
-        }
+    public void eat(Plant food) {
+     food = null;
     }
 
     @Override

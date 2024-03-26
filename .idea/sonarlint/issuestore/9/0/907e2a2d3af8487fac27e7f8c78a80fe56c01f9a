@@ -1,5 +1,6 @@
 
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(“©ª€ùÿÿÿÿ
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(“©ª€ùÿÿÿÿ8¥åÑç1
+^
+java:S1226	"AIntroduce a new variable instead of reusing the parameter "food".(üË’ª8¦åÑç1
 U
-java:S1854
-"8Remove this useless assignment to local variable "food".(üË’ª8•°£êå1
+java:S1854	"8Remove this useless assignment to local variable "food".(üË’ª8¨åÑç1

@@ -6,23 +6,27 @@ import PlantPackage.Plant;
 import RandomizePackage.RandomizeClass;
 import Settings.Settings;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Dear extends Herbivore {
     private int moverRandom;
-    private int counter = 0;
+    public static AtomicInteger atomicInteger = new AtomicInteger(0);
     private double eat;
     public Dear() {
         setMaxWeigth(Settings.MAX_WEIGHT_DEAR);
         setMaxCapacity(Settings.MAX_CAPACITY_IN_ONE_CELL_DEAR);
         setMaxFoodNeeded(Settings.MAX_FOOD_NEEDED_DEAR);
-        counter++;
         setX(RandomizeClass.getRandom(Settings.MIN_ROW_ISLAND,Settings.MAX_ROW_ISLAND));
         setY(RandomizeClass.getRandom(Settings.MIN_COL_ISLAND, Settings.MAX_COL_ISLAND));
+        atomicInteger.getAndIncrement();
     }
 
     @Override
-    public void eat(Object food) {
-        ((Plant) food).setCounter(getCounter() - 1);
-        super.eat(food);
+    public void eat(Plant food) {
+        if(food.getX() == this.getX() && food.getY() == this.getY()) {
+            food.setCounter(getCounter() - 1);
+            super.eat(food);
+        }
     }
 
     @Override
@@ -59,9 +63,9 @@ public class Dear extends Herbivore {
 
     @Override
     public void multiple(Animal partner) throws CloneNotSupportedException {
-        if (counter < getMaxCapacity() && this.getClass().equals(partner.getClass())) {
+        if (atomicInteger.get() < getMaxCapacity() && this.getClass().equals(partner.getClass()) && partner.getX() == this.getX() && partner.getY() == this.getY()) {
             this.clone();
-            counter++;
+            atomicInteger.getAndIncrement();
         }
     }
 
@@ -69,7 +73,7 @@ public class Dear extends Herbivore {
     public void die(Object death) {
         if (death instanceof Dear && getMaxWeigth() <= 0) {
             death = null;
-            counter--;
+            atomicInteger.getAndDecrement();
             System.out.println("Олень, находящийся в координатах: х - " + getX() + ", y - " + getY() + "умер от голода :(((");
         }
     }
@@ -116,13 +120,5 @@ public class Dear extends Herbivore {
             }
             this.setY(result);
         }
-    }
-
-    public  int getCounter() {
-        return counter;
-    }
-
-    public void setCounter(int counter) {
-        this.counter = counter;
     }
 }

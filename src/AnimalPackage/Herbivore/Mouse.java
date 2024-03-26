@@ -21,17 +21,19 @@ public class Mouse extends Herbivore {
     }
 
     @Override
-    public void eat(Object food) {
-        if(((Plant) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_MOUSE) {
+    public void eat(Plant food) {
+        if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_MOUSE) {
             setMaxWeigth(Settings.MAX_WEIGHT_MOUSE);
         }
-        ((Plant) food).setCounter(getCounter() - 1);
-        super.eat(food);
+        if(food.getX() == this.getX() && food.getY() == this.getY()) {
+            food.setCounter(getCounter() - 1);
+            super.eat(food);
+        }
     }
 
     public void eat(Caterpillar food) {
         this.eat = RandomizeClass.getRandom();
-        if(eat < 0.9) {
+        if(eat < 0.9 && food.getX() == this.getX() && food.getY() == this.getY()) {
             food.setCounter(getCounter() - 1);
             super.eat(food);
         }
@@ -71,7 +73,7 @@ public class Mouse extends Herbivore {
 
     @Override
     public void multiple(Animal partner) throws CloneNotSupportedException {
-        if (counter < getMaxCapacity() && this.getClass().equals(partner.getClass())) {
+        if (counter < getMaxCapacity() && this.getClass().equals(partner.getClass()) && partner.getX() == this.getX() && partner.getY() == this.getY()) {
             this.clone();
             counter++;
         }

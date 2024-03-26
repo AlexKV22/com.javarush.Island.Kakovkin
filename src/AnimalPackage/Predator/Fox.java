@@ -6,49 +6,51 @@ import IslandModel.Island;
 import RandomizePackage.RandomizeClass;
 import Settings.Settings;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Fox extends Predator {
     private int moverRandom;
-    private int counter = 0;
+    public static AtomicInteger atomicInteger = new AtomicInteger(0);
     private double eat;
     public Fox() {
         setMaxWeigth(Settings.MAX_WEIGHT_FOX);
         setMaxCapacity(Settings.MAX_CAPACITY_IN_ONE_CELL_FOX);
         setMaxFoodNeeded(Settings.MAX_FOOD_NEEDED_FOX);
-        counter++;
         setX(RandomizeClass.getRandom(Settings.MIN_ROW_ISLAND,Settings.MAX_ROW_ISLAND));
         setY(RandomizeClass.getRandom(Settings.MIN_COL_ISLAND, Settings.MAX_COL_ISLAND));
+        atomicInteger.getAndIncrement();
     }
 
     @Override
-    public void eat(Object food) {
+    public void eat(Herbivore food) {
         this.eat = RandomizeClass.getRandom();
 
-        if (food instanceof Rabbit && eat < 0.7) {
-            if(((Rabbit) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_FOX) {
+        if (food instanceof Rabbit && eat < 0.7 && food.getX() == this.getX() && food.getY() == this.getY()) {
+            if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_FOX) {
                 setMaxWeigth(Settings.MAX_WEIGHT_FOX);
             }
             ((Rabbit) food).setCounter(getCounter() - 1);
             super.eat(food);
         }
 
-        else if (food instanceof Mouse && eat < 0.9) {
-            if(((Mouse) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_FOX) {
+        else if (food instanceof Mouse && eat < 0.9 && food.getX() == this.getX() && food.getY() == this.getY()) {
+            if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_FOX) {
                 setMaxWeigth(Settings.MAX_WEIGHT_FOX);
             }
             ((Mouse) food).setCounter(getCounter() - 1);
             super.eat(food);
         }
 
-        else if (food instanceof Duck && eat < 0.6) {
-            if(((Duck) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_FOX) {
+        else if (food instanceof Duck && eat < 0.6 && food.getX() == this.getX() && food.getY() == this.getY()) {
+            if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_FOX) {
                 setMaxWeigth(Settings.MAX_WEIGHT_FOX);
             }
             ((Duck) food).setCounter(getCounter() - 1);
             super.eat(food);
         }
 
-        else if (food instanceof Caterpillar && eat < 0.4) {
-            if(((Caterpillar) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_FOX) {
+        else if (food instanceof Caterpillar && eat < 0.4 && food.getX() == this.getX() && food.getY() == this.getY()) {
+            if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_FOX) {
                 setMaxWeigth(Settings.MAX_WEIGHT_FOX);
             }
             ((Caterpillar) food).setCounter(getCounter() - 1);
@@ -90,9 +92,9 @@ public class Fox extends Predator {
 
     @Override
     public void multiple(Animal partner) throws CloneNotSupportedException {
-        if (counter < getMaxCapacity() && this.getClass().equals(partner.getClass())) {
+        if (atomicInteger.get() < getMaxCapacity() && this.getClass().equals(partner.getClass()) && partner.getX() == this.getX() && partner.getY() == this.getY()) {
             this.clone();
-            counter++;
+            atomicInteger.getAndIncrement();
         }
     }
 
@@ -100,7 +102,7 @@ public class Fox extends Predator {
     public void die(Object death) {
         if (death instanceof Fox && getMaxWeigth() <= 0) {
             death = null;
-            counter--;
+           atomicInteger.getAndDecrement();
             System.out.println("Лиса, находящаяся в координатах: х - " + getX() + ", y - " + getY() + "умерла от голода :(((");
         }
     }
@@ -147,13 +149,5 @@ public class Fox extends Predator {
             }
             this.setY(result);
         }
-    }
-
-    public int getCounter() {
-        return counter;
-    }
-
-    public void setCounter(int counter) {
-        this.counter = counter;
     }
 }

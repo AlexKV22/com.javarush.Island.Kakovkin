@@ -71,3 +71,5 @@ w
 G.idea/sonarlint/issuestore/3/9/398f0442215d572122b996b9d21eb27ddfedd591,6\e\6e9f7d2ec4301d8eeff6e6e1dfb187d1f6b4e320
 J
 .idea/libraries/Lombok.xml,6\8\68feda18cce909fe878105c245e6deecc8c658f2
+M
+src/Statistics/Statistic.java,d\9\d9932b0d23f435b91de55f3d24745237a2d2c2f9

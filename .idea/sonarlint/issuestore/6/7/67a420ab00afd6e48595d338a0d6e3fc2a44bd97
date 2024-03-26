@@ -1,11 +1,11 @@
 
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(“©ª€ùÿÿÿÿ8ÑÃºëå1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(“©ª€ùÿÿÿÿ8úæğÑç1
 t
-java:S1450"RRemove the "eat" field and declare it as a local variable in the relevant methods.(¸¡»¸ÿÿÿÿÿ8‚ëåæ1
+java:S1450"RRemove the "eat" field and declare it as a local variable in the relevant methods.(¸¡»¸ÿÿÿÿÿ8„çğÑç1
 [
-java:S1854I"9Remove this useless assignment to local variable "death".(½ÜøÅúÿÿÿÿ8ºÍÄëå1
-G	java:S106K"+Replace this use of System.out by a logger.(ê¼áÉ8¥‰Äëå1
+java:S1854K"9Remove this useless assignment to local variable "death".(½ÜøÅúÿÿÿÿ8ŠçğÑç1
+G	java:S106M"+Replace this use of System.out by a logger.(ê¼áÉ8ŠçğÑç1
 V
-java:S1128"9Remove this unused import 'AnimalPackage.Predator.Eagle'.(µ‡ñ8æ†Âææ1
+java:S1128"9Remove this unused import 'AnimalPackage.Predator.Eagle'.(µ‡ñ8©Çüßç1
 L
-java:S1128"/Remove this unused import 'IslandModel.Island'.(ñŒîé8æ†Âææ1
+java:S1128"/Remove this unused import 'IslandModel.Island'.(ñŒîé8©Çüßç1

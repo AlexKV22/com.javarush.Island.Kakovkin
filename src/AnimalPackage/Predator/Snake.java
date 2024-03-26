@@ -1,49 +1,48 @@
 package AnimalPackage.Predator;
 
 import AnimalPackage.Animal;
-import AnimalPackage.Herbivore.Duck;
-import AnimalPackage.Herbivore.Herbivore;
-import AnimalPackage.Herbivore.Mouse;
-import AnimalPackage.Herbivore.Rabbit;
+import AnimalPackage.Herbivore.*;
 import IslandModel.Island;
 import RandomizePackage.RandomizeClass;
 import Settings.Settings;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Snake extends Predator {
     private int moverRandom;
-    private int counter = 0;
+    public static AtomicInteger atomicInteger = new AtomicInteger(0);
     private double eat;
     public Snake() {
         setMaxWeigth(Settings.MAX_WEIGHT_SNAKE);
         setMaxCapacity(Settings.MAX_CAPACITY_IN_ONE_CELL_SNAKE);
         setMaxFoodNeeded(Settings.MAX_FOOD_NEEDED_SNAKE);
-        counter++;
         setX(RandomizeClass.getRandom(Settings.MIN_ROW_ISLAND,Settings.MAX_ROW_ISLAND));
         setY(RandomizeClass.getRandom(Settings.MIN_COL_ISLAND, Settings.MAX_COL_ISLAND));
+        atomicInteger.getAndIncrement();
     }
 
     @Override
-    public void eat(Object food) {
+    public void eat(Herbivore food) {
         this.eat = RandomizeClass.getRandom();
 
-        if (food instanceof Mouse && eat < 0.4) {
-            if(((Mouse) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_SNAKE) {
+        if (food instanceof Mouse && eat < 0.4 && food.getX() == this.getX() && food.getY() == this.getY()) {
+            if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_SNAKE) {
                 setMaxWeigth(Settings.MAX_WEIGHT_SNAKE);
             }
             ((Mouse) food).setCounter(getCounter() - 1);
             super.eat(food);
         }
 
-        else if (food instanceof Rabbit && eat < 0.2) {
-            if(((Rabbit) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_SNAKE) {
+        else if (food instanceof Rabbit && eat < 0.2 && food.getX() == this.getX() && food.getY() == this.getY()) {
+            if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_SNAKE) {
                 setMaxWeigth(Settings.MAX_WEIGHT_SNAKE);
             }
             ((Rabbit) food).setCounter(getCounter() - 1);
             super.eat(food);
         }
 
-        else if (food instanceof Duck && eat < 0.1) {
-            if(((Duck) food).getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_SNAKE) {
+        else if (food instanceof Duck && eat < 0.1 && food.getX() == this.getX() && food.getY() == this.getY()) {
+            if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_SNAKE) {
                 setMaxWeigth(Settings.MAX_WEIGHT_SNAKE);
             }
             ((Duck) food).setCounter(getCounter() - 1);
@@ -52,11 +51,11 @@ public class Snake extends Predator {
     }
 
     public void eat(Fox food) {
-        if (eat < 0.15) {
+        if (eat < 0.15 && food.getX() == this.getX() && food.getY() == this.getY()) {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_SNAKE) {
                 setMaxWeigth(Settings.MAX_WEIGHT_SNAKE);
             }
-             food.setCounter(getCounter() - 1);
+             Fox.atomicInteger.getAndDecrement();
             food = null;
         }
     }
@@ -98,9 +97,9 @@ public class Snake extends Predator {
 
     @Override
     public void multiple(Animal partner) throws CloneNotSupportedException {
-        if (counter < getMaxCapacity() && this.getClass().equals(partner.getClass())) {
+        if (atomicInteger.get()< getMaxCapacity() && this.getClass().equals(partner.getClass()) && partner.getX() == this.getX() && partner.getY() == this.getY()) {
             this.clone();
-            counter++;
+            atomicInteger.getAndIncrement();
         }
     }
 
@@ -108,7 +107,7 @@ public class Snake extends Predator {
     public void die(Object death) {
         if (death instanceof Snake && getMaxWeigth() <= 0) {
             death = null;
-            counter--;
+            atomicInteger.getAndDecrement();
             System.out.println("Змея, находящаяся в координатах: х - " + getX() + ", y - " + getY() + "умерла от голода :(((");
         }
     }
@@ -155,13 +154,5 @@ public class Snake extends Predator {
             }
             this.setY(result);
         }
-    }
-
-    public int getCounter() {
-        return counter;
-    }
-
-    public void setCounter(int counter) {
-        this.counter = counter;
     }
 }
