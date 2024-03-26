@@ -20,7 +20,7 @@ public class Caterpillar extends Herbivore {
     @Override
     public void eat(Plant food) {
         if(food.getX() == this.getX() && food.getY() == this.getY()) {
-            food.setCounter(getCounter() - 1);
+            Plant.atomicInteger.getAndDecrement();
             super.eat(food);
         }
     }

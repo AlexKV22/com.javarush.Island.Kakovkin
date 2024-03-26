@@ -6,14 +6,6 @@ java:S1444"3Make this "public static atomicInteger" field final(¯ÎÌ©8Îßç1
 {	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ì‡íäúÿÿÿÿ8¿¨“âæ1
 n
 java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(üÔök8Ë¨“âæ1
-c
-java:S6201"FReplace this instanceof check and cast with 'instanceof Rabbit rabbit'(–˜ĞÏ8Ì¨“âæ1
-a
-java:S6201$"DReplace this instanceof check and cast with 'instanceof Mouse mouse'(‰ïïá8Í¨“âæ1
-d
-java:S6201,"BReplace this instanceof check and cast with 'instanceof Duck duck'(«®¤ãøÿÿÿÿ8Î¨“âæ1
-m
-java:S62014"PReplace this instanceof check and cast with 'instanceof Caterpillar caterpillar'(¤…ƒ8Ï¨“âæ1
 [
 java:S1854h"9Remove this useless assignment to local variable "death".(½ÜøÅúÿÿÿÿ8Ó¨“âæ1
 G	java:S106j"+Replace this use of System.out by a logger.(œ´¬ş8Ô¨“âæ1

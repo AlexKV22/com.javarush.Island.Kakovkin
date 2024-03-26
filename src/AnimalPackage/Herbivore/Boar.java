@@ -24,7 +24,7 @@ public class Boar extends Herbivore {
     @Override
     public void eat(Plant food) {
         if(food.getX() == this.getX() && food.getY() == this.getY()) {
-            food.setCounter(getCounter() - 1);
+            Plant.atomicInteger.getAndDecrement();
             super.eat(food);
         }
     }
@@ -32,7 +32,7 @@ public class Boar extends Herbivore {
     public void eat(Mouse food) {
         this.eat = RandomizeClass.getRandom();
         if (eat < 0.5 && food.getX() == this.getX() && food.getY() == this.getY()) {
-            food.setCounter(getCounter() - 1);
+            Mouse.atomicInteger.getAndDecrement();
             super.eat(food);
         }
     }
@@ -40,7 +40,7 @@ public class Boar extends Herbivore {
     public void eat(Caterpillar food) {
         this.eat = RandomizeClass.getRandom();
         if (eat < 0.9 && food.getX() == this.getX() && food.getY() == this.getY()) {
-            food.setCounter(getCounter() - 1);
+            Caterpillar.atomicInteger.getAndDecrement();
             super.eat(food);
         }
     }

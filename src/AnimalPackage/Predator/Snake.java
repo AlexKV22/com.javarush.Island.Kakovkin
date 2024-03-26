@@ -29,7 +29,7 @@ public class Snake extends Predator {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_SNAKE) {
                 setMaxWeigth(Settings.MAX_WEIGHT_SNAKE);
             }
-            ((Mouse) food).setCounter(getCounter() - 1);
+            Mouse.atomicInteger.getAndDecrement();
             super.eat(food);
         }
 
@@ -37,7 +37,7 @@ public class Snake extends Predator {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_SNAKE) {
                 setMaxWeigth(Settings.MAX_WEIGHT_SNAKE);
             }
-            ((Rabbit) food).setCounter(getCounter() - 1);
+            Rabbit.atomicInteger.getAndDecrement();
             super.eat(food);
         }
 
@@ -45,7 +45,7 @@ public class Snake extends Predator {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_SNAKE) {
                 setMaxWeigth(Settings.MAX_WEIGHT_SNAKE);
             }
-            ((Duck) food).setCounter(getCounter() - 1);
+            Duck.atomicInteger.getAndDecrement();
             super.eat(food);
         }
     }

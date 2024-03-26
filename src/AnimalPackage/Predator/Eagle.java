@@ -29,7 +29,7 @@ public class Eagle extends Predator {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_EAGLE) {
                 setMaxWeigth(Settings.MAX_WEIGHT_EAGLE);
             }
-            ((Rabbit) food).setCounter(getCounter() - 1);
+            Rabbit.atomicInteger.getAndDecrement();
             super.eat(food);
         }
 
@@ -37,7 +37,7 @@ public class Eagle extends Predator {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_EAGLE) {
                 setMaxWeigth(Settings.MAX_WEIGHT_EAGLE);
             }
-            ((Mouse) food).setCounter(getCounter() - 1);
+            Mouse.atomicInteger.getAndDecrement();
             super.eat(food);
         }
 
@@ -45,7 +45,7 @@ public class Eagle extends Predator {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_EAGLE) {
                 setMaxWeigth(Settings.MAX_WEIGHT_EAGLE);
             }
-            ((Duck) food).setCounter(getCounter() - 1);
+            Duck.atomicInteger.getAndDecrement();
             super.eat(food);
         }
     }
@@ -55,7 +55,7 @@ public class Eagle extends Predator {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_EAGLE) {
                 setMaxWeigth(Settings.MAX_WEIGHT_EAGLE);
             }
-            food.setCounter(getCounter() - 1);
+            Fox.atomicInteger.getAndDecrement();
             food = null;
         }
     }

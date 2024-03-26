@@ -6,19 +6,21 @@ import Interfaces.Eatable;
 import RandomizePackage.RandomizeClass;
 import Settings.Settings;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Plant implements Eatable {
     private double maxWeigth;
     private int maxCapacity;
-    private int counter = 0;
+    public static AtomicInteger atomicInteger = new AtomicInteger(0);
     private int x;
     private int y;
 
     public Plant() {
         this.maxWeigth = Settings.MAX_WEIGHT_PLANT;
         this.maxCapacity = Settings.MAX_CAPACITY_PLANT;
-        counter++;
         x = RandomizeClass.getRandom(Settings.MIN_ROW_ISLAND,Settings.MAX_ROW_ISLAND);
         y = RandomizeClass.getRandom(Settings.MIN_COL_ISLAND, Settings.MAX_COL_ISLAND);
+        atomicInteger.getAndIncrement();
     }
 
     public double getMaxWeigth() {
@@ -50,17 +52,9 @@ public class Plant implements Eatable {
     }
 
     public void multiple(Plant partner) throws CloneNotSupportedException {
-        if (counter < getMaxCapacity() && this.getClass().equals(partner.getClass())) {
+        if (atomicInteger.get() < getMaxCapacity() && this.getClass().equals(partner.getClass())) {
             this.clone();
-            counter++;
+            atomicInteger.getAndIncrement();
         }
-    }
-
-    public int getCounter() {
-        return counter;
-    }
-
-    public void setCounter(int counter) {
-        this.counter = counter;
     }
 }

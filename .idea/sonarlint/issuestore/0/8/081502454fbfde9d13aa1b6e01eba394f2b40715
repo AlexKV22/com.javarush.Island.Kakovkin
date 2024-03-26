@@ -4,12 +4,6 @@ java:S1104"YMake atomicInteger a static final constant or non-public and provi
 P
 java:S1444"3Make this "public static atomicInteger" field final(¯ÎÌ©8Å¿Òßç1
 {	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ì‡íäúÿÿÿÿ8µ• Ñç1
-h
-java:S6201"FReplace this instanceof check and cast with 'instanceof Rabbit rabbit'(š¨†³ýÿÿÿÿ8Ì• Ñç1
-a
-java:S6201$"DReplace this instanceof check and cast with 'instanceof Mouse mouse'(‰ïïá8Í• Ñç1
-d
-java:S6201,"BReplace this instanceof check and cast with 'instanceof Duck duck'(ÃÒ¶ìúÿÿÿÿ8Î• Ñç1
 U
 java:S1854;"8Remove this useless assignment to local variable "food".(üË’ª8Ð• Ñç1
 [

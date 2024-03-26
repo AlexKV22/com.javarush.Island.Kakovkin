@@ -6,25 +6,27 @@ import PlantPackage.Plant;
 import RandomizePackage.RandomizeClass;
 import Settings.Settings;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Goat extends Herbivore {
     private int moverRandom;
-    private int counter = 0;
+    public static AtomicInteger atomicInteger = new AtomicInteger(0);
     private double eat;
 
     public Goat() {
         setMaxWeigth(Settings.MAX_WEIGHT_GOAT);
         setMaxCapacity(Settings.MAX_CAPACITY_IN_ONE_CELL_GOAT);
         setMaxFoodNeeded(Settings.MAX_FOOD_NEEDED_GOAT);
-        counter++;
         setX(RandomizeClass.getRandom(Settings.MIN_ROW_ISLAND,Settings.MAX_ROW_ISLAND));
         setY(RandomizeClass.getRandom(Settings.MIN_COL_ISLAND, Settings.MAX_COL_ISLAND));
+        atomicInteger.getAndIncrement();
 
     }
 
     @Override
     public void eat(Plant food) {
         if(food.getX() == this.getX() && food.getY() == this.getY()) {
-            food.setCounter(getCounter() - 1);
+            Plant.atomicInteger.getAndDecrement();
             super.eat(food);
         }
     }
@@ -63,16 +65,16 @@ public class Goat extends Herbivore {
 
     @Override
     public void multiple(Animal partner) throws CloneNotSupportedException {
-        if (counter < getMaxCapacity() && this.getClass().equals(partner.getClass()) && partner.getX() == this.getX() && partner.getY() == this.getY()) {
+        if (atomicInteger.get() < getMaxCapacity() && this.getClass().equals(partner.getClass()) && partner.getX() == this.getX() && partner.getY() == this.getY()) {
             this.clone();
-            counter++;
+            atomicInteger.getAndIncrement();
         }
     }
 
     @Override
     public void die(Object death) {
         if (death instanceof Goat && getMaxWeigth() <= 0) {
-            counter--;
+            atomicInteger.getAndDecrement();
             System.out.println("Коза, находящаяся в координатах: х - " + getX() + ", y - " + getY() + "умерла от голода :(((");
         }
     }
@@ -119,13 +121,5 @@ public class Goat extends Herbivore {
             }
             this.setY(result);
         }
-    }
-
-    public int getCounter() {
-        return counter;
-    }
-
-    public void setCounter(int counter) {
-        this.counter = counter;
     }
 }

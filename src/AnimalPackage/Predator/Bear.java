@@ -33,7 +33,7 @@ public class Bear extends Predator {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
                 setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
             }
-            ((Horse) food).setCounter(getCounter() - 1);
+            Horse.atomicInteger.getAndDecrement();
             super.eat(food);
         }
 
@@ -41,7 +41,7 @@ public class Bear extends Predator {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
                 setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
             }
-            ((Dear) food).setCounter(getCounter() - 1);
+            Dear.atomicInteger.getAndDecrement();
             super.eat(food);
         }
 
@@ -49,7 +49,7 @@ public class Bear extends Predator {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
                 setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
             }
-            ((Rabbit) food).setCounter(getCounter() - 1);
+            Rabbit.atomicInteger.getAndDecrement();
             super.eat(food);
         }
 
@@ -57,7 +57,7 @@ public class Bear extends Predator {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
                 setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
             }
-            ((Mouse) food).setCounter(getCounter() - 1);
+            Mouse.atomicInteger.getAndDecrement();
             super.eat(food);
         }
 
@@ -65,7 +65,7 @@ public class Bear extends Predator {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
                 setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
             }
-            ((Sheep) food).setCounter(getCounter() - 1);
+            Sheep.atomicInteger.getAndDecrement();
             super.eat(food);
         }
 
@@ -73,7 +73,7 @@ public class Bear extends Predator {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
                 setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
             }
-            ((Goat) food).setCounter(getCounter() - 1);
+            Goat.atomicInteger.getAndDecrement();
             super.eat(food);
         }
 
@@ -81,7 +81,7 @@ public class Bear extends Predator {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
                 setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
             }
-            ((Boar) food).setCounter(getCounter() - 1);
+            Boar.atomicInteger.getAndDecrement();
             super.eat(food);
         }
 
@@ -89,7 +89,7 @@ public class Bear extends Predator {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
                 setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
             }
-            ((Buffalo) food).setCounter(getCounter() - 1);
+            Buffalo.atomicInteger.getAndDecrement();
             super.eat(food);
         }
 
@@ -97,7 +97,7 @@ public class Bear extends Predator {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
                 setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
             }
-            ((Duck) food).setCounter(getCounter() - 1);
+            Duck.atomicInteger.getAndDecrement();
             super.eat(food);
         }
     }
@@ -108,7 +108,7 @@ public class Bear extends Predator {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_BEAR) {
                 setMaxWeigth(Settings.MAX_WEIGHT_BEAR);
             }
-            food.setCounter(getCounter() - 1);
+            Snake.atomicInteger.getAndDecrement();
             food = null;
         }
     }

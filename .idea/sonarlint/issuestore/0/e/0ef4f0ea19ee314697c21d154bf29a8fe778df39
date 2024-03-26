@@ -6,24 +6,6 @@ java:S1444"3Make this "public static atomicInteger" field final(¯ÎÌ©8›¦Õßç1
 {	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ì‡íäúÿÿÿÿ8¦Õßç1
 n
 java:S3776"RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.(üÔök8Ç¨Õßç1
-f
-java:S6201"DReplace this instanceof check and cast with 'instanceof Horse horse'(ì•Èÿÿÿÿÿ8È¨Õßç1
-d
-java:S6201$"BReplace this instanceof check and cast with 'instanceof Dear dear'(Ã¿˜âûÿÿÿÿ8É¨Õßç1
-h
-java:S6201,"FReplace this instanceof check and cast with 'instanceof Rabbit rabbit'(Ì¸¥“øÿÿÿÿ8Ë¨Õßç1
-f
-java:S62014"DReplace this instanceof check and cast with 'instanceof Mouse mouse'(ÃÇ¯ùÿÿÿÿ8Ì¨Õßç1
-a
-java:S6201<"DReplace this instanceof check and cast with 'instanceof Sheep sheep'(¥ä¯ÿ8Î¨Õßç1
-_
-java:S6201D"BReplace this instanceof check and cast with 'instanceof Goat goat'( æ8Ï¨Õßç1
-d
-java:S6201L"BReplace this instanceof check and cast with 'instanceof Boar boar'(¥øÇÿÿÿÿÿ8Ğ¨Õßç1
-j
-java:S6201T"HReplace this instanceof check and cast with 'instanceof Buffalo buffalo'(¼âÄğùÿÿÿÿ8Ñ¨Õßç1
-_
-java:S6201\"BReplace this instanceof check and cast with 'instanceof Duck duck'(œûÙ8Ò¨Õßç1
 \
 java:S1854"9Remove this useless assignment to local variable "death".(½ÜøÅúÿÿÿÿ8â¨Õßç1
 H	java:S106’"+Replace this use of System.out by a logger.(¶‘š8øçÕßç1

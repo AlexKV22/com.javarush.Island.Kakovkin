@@ -1,31 +1,13 @@
 
 v
-java:S1104"YMake atomicInteger a static final constant or non-public and provide accessors if needed.(¯ÎÌ©8¡–Òßç1
+java:S1104"YMake atomicInteger a static final constant or non-public and provide accessors if needed.(¯ÎÌ©8å¡˜àç1
 P
-java:S1444"3Make this "public static atomicInteger" field final(¯ÎÌ©8¢–Òßç1
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ì‡íäúÿÿÿÿ8ïÿ‚ßç1
+java:S1444"3Make this "public static atomicInteger" field final(¯ÎÌ©8æ¡˜àç1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ì‡íäúÿÿÿÿ8è¡˜àç1
 n
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.(üÔök8³ƒƒßç1
-a
-java:S6201 "DReplace this instanceof check and cast with 'instanceof Horse horse'(Å±Éó8³ƒƒßç1
-_
-java:S6201("BReplace this instanceof check and cast with 'instanceof Dear dear'(…øİû8·ƒƒßç1
-h
-java:S62010"FReplace this instanceof check and cast with 'instanceof Rabbit rabbit'(Ë¢èıÿÿÿÿ8»ƒƒßç1
-a
-java:S62018"DReplace this instanceof check and cast with 'instanceof Mouse mouse'(‰ïïá8»ƒƒßç1
-a
-java:S6201@"DReplace this instanceof check and cast with 'instanceof Sheep sheep'(¥ä¯ÿ8¿ƒƒßç1
-_
-java:S6201H"BReplace this instanceof check and cast with 'instanceof Goat goat'(‘ó´ş8¿ƒƒßç1
-_
-java:S6201P"BReplace this instanceof check and cast with 'instanceof Boar boar'(ö¤•8Ãƒƒßç1
-e
-java:S6201X"HReplace this instanceof check and cast with 'instanceof Buffalo buffalo'(êòĞÈ8Ãƒƒßç1
-_
-java:S6201`"BReplace this instanceof check and cast with 'instanceof Duck duck'(ÉªäÎ8Çƒƒßç1
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.(üÔök8ş¡˜àç1
 U
-java:S1854p"8Remove this useless assignment to local variable "food".(üË’ª8Çƒƒßç1
+java:S1854p"8Remove this useless assignment to local variable "food".(üË’ª8‰¢˜àç1
 \
-java:S1854Ÿ"9Remove this useless assignment to local variable "death".(½ÜøÅúÿÿÿÿ8Óƒƒßç1
-M	java:S106¡"+Replace this use of System.out by a logger.(Õ‡ƒ‹øÿÿÿÿ8Óƒƒßç1
+java:S1854Ÿ"9Remove this useless assignment to local variable "death".(½ÜøÅúÿÿÿÿ8¢˜àç1
+M	java:S106¡"+Replace this use of System.out by a logger.(Õ‡ƒ‹øÿÿÿÿ8‘¢˜àç1

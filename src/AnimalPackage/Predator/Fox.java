@@ -29,7 +29,7 @@ public class Fox extends Predator {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_FOX) {
                 setMaxWeigth(Settings.MAX_WEIGHT_FOX);
             }
-            ((Rabbit) food).setCounter(getCounter() - 1);
+            Rabbit.atomicInteger.getAndDecrement();
             super.eat(food);
         }
 
@@ -37,7 +37,7 @@ public class Fox extends Predator {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_FOX) {
                 setMaxWeigth(Settings.MAX_WEIGHT_FOX);
             }
-            ((Mouse) food).setCounter(getCounter() - 1);
+            Mouse.atomicInteger.getAndDecrement();
             super.eat(food);
         }
 
@@ -45,7 +45,7 @@ public class Fox extends Predator {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_FOX) {
                 setMaxWeigth(Settings.MAX_WEIGHT_FOX);
             }
-            ((Duck) food).setCounter(getCounter() - 1);
+            Duck.atomicInteger.getAndDecrement();
             super.eat(food);
         }
 
@@ -53,7 +53,7 @@ public class Fox extends Predator {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_FOX) {
                 setMaxWeigth(Settings.MAX_WEIGHT_FOX);
             }
-            ((Caterpillar) food).setCounter(getCounter() - 1);
+            Caterpillar.atomicInteger.getAndDecrement();
             super.eat(food);
         }
     }
