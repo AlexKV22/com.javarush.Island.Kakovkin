@@ -1,6 +1,5 @@
 package IslandModel;
 
-import AnimalPackage.Animal;
 import AnimalPackage.Herbivore.*;
 import AnimalPackage.Predator.*;
 import PlantPackage.Plant;
@@ -9,72 +8,87 @@ import java.util.ArrayList;
 
 public class Location extends Thread {
 
-  public ArrayList<Animal> animal;
   public ArrayList<Predator> predators;
   public ArrayList<Herbivore> herbivores;
   public ArrayList<Plant> plant;
 
    public Location() {
-      this.animal = new ArrayList<>();
       this.plant = new ArrayList<>();
       this.predators = new ArrayList<>();
       this.herbivores = new ArrayList<>();
    }
 
    public void startCell() {
-       for (int i = 0; i < 4; i++) {
-           animal.add(new Bear());
-           animal.add(new Fox());
-           animal.add(new Snake());
-           animal.add(new Wolf());
-           animal.add(new Eagle());
-           animal.add(new Boar());
-           animal.add(new Buffalo());
-           animal.add(new Caterpillar());
-           animal.add(new Dear());
-           animal.add(new Duck());
-           animal.add(new Goat());
-           animal.add(new Horse());
-           animal.add(new Mouse());
-           animal.add(new Rabbit());
-           animal.add(new Sheep());
+       for (int i = 0; i < 1; i++) {
+           predators.add(new Bear());
+           predators.add(new Fox());
+           predators.add(new Snake());
+           predators.add(new Wolf());
+           predators.add(new Eagle());
        }
-       for (int i = 0; i < 100; i++) {
+       for (int i = 0; i < 200; i++) {
            plant.add(new Plant());
        }
+
+       for (int i = 0; i < 40; i++) {
+           herbivores.add(new Boar());
+           herbivores.add(new Buffalo());
+           herbivores.add(new Caterpillar());
+           herbivores.add(new Dear());
+           herbivores.add(new Duck());
+           herbivores.add(new Goat());
+           herbivores.add(new Horse());
+           herbivores.add(new Mouse());
+           herbivores.add(new Rabbit());
+           herbivores.add(new Sheep());
+
+       }
+
    }
 
 
     public void startLive() {
-        for (Animal someAnimal : animal) {
 
-            if (someAnimal != null) {
-                someAnimal.move();
-            }
-                if (someAnimal instanceof Predator) {
-                    predators.add((Predator) someAnimal);
-                } else {
-                    herbivores.add((Herbivore) someAnimal);
-                }
-
-                for (Predator predator : predators) {
-                    for (Herbivore herbivore : herbivores) {
-                        predator.eat(herbivore);
-                    }
-                }
-                for (Herbivore herbivore : herbivores ) {
-                    for (Plant plant1 : plant ) {
-                        herbivore.eat(plant1);
-                    }
-                }                                                       //сделать питание определенных классов, типа гусеница у утки
-                                                                        //сделать определенное количество циклов
-                try {
-                    someAnimal.multiple(someAnimal);
-                } catch (CloneNotSupportedException e) {
-                    throw new RuntimeException(e);
-                }
+        for (Predator predator : predators) {
+            if (predator != null) {
+                predator.move();
             }
 
+            try {
+                if(predator != null) {
+                    predator.multiple(predator);
+                }
+            } catch (CloneNotSupportedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+
+
+        for (Herbivore herbivore : herbivores ) {
+            if (herbivore != null) {
+                herbivore.move();
+            }
+
+            try {
+                if(herbivore != null) {
+                    herbivore.multiple(herbivore);
+                }
+            } catch (CloneNotSupportedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        for (Predator predator : predators) {
+            for (Herbivore herbivore : herbivores) {
+                predator.eat(herbivore);
+            }
+        }
+        for (Herbivore herbivore : herbivores ) {
+            for (Plant plant1 : plant ) {
+                herbivore.eat(plant1);
+            }
+        }
 
             for(Plant plant1 : plant) {
             try {

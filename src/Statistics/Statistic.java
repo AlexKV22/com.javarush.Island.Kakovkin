@@ -25,6 +25,7 @@ public class Statistic implements Runnable {
                 "\nКоличество мышей:  "+ Mouse.atomicInteger.get() +
                 "\nКоличество зайцев:  "+ Rabbit.atomicInteger.get() +
                 "\nКоличество овец:  "+ Sheep.atomicInteger.get() +
-                "\nКоличество травы:  "+ Plant.atomicInteger.get());
+                "\nКоличество травы:  "+ Plant.atomicInteger.get() +
+                "\n-------------------------------------------");
     }
 }

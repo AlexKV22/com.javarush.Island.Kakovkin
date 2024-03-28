@@ -1,6 +1,8 @@
 package IslandModel;
 import Settings.Settings;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 
 public class Island implements Runnable {
     public Location[][] locations = new Location[Settings.MAX_ROW_ISLAND][Settings.MAX_COL_ISLAND];
