@@ -27,7 +27,7 @@ public class Mouse extends Herbivore {
         if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_MOUSE) {
             setMaxWeigth(Settings.MAX_WEIGHT_MOUSE);
         }
-        if(food.getX() == this.getX() && food.getY() == this.getY()) {
+        if(food.getX() == this.getX() && food.getY() == this.getY() && Plant.atomicInteger.get() > 0) {
             Plant.atomicInteger.getAndDecrement();
             super.eat(food);
         }
@@ -35,7 +35,7 @@ public class Mouse extends Herbivore {
 
     public void eat(Caterpillar food) {
         this.eat = RandomizeClass.getRandom();
-        if(eat < 0.9 && food.getX() == this.getX() && food.getY() == this.getY()) {
+        if(eat < 0.9 && food.getX() == this.getX() && food.getY() == this.getY() && Caterpillar.atomicInteger.get() > 0) {
             Caterpillar.atomicInteger.getAndDecrement();
             super.eat(food);
         }

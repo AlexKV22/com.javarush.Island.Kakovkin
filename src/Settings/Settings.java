@@ -1,9 +1,9 @@
 package Settings;
 
 public class Settings {
-    public static final int MAX_ROW_ISLAND = 100;
+    public static final int MAX_ROW_ISLAND = 2;
     public static final int MIN_ROW_ISLAND = 0;
-    public static final int MAX_COL_ISLAND = 20;
+    public static final int MAX_COL_ISLAND = 2;
     public static final int MIN_COL_ISLAND = 0;
 
     public static final int MAX_CAPACITY_PLANT = 200;
@@ -14,7 +14,7 @@ public class Settings {
     public static final double MAX_WEIGHT_BEAR = 500;
     public static final int MAX_CAPACITY_IN_ONE_CELL_BEAR = 5;
     public static final double MAX_FOOD_NEEDED_BEAR = 80;
-    public static final int MINUS_HEALTH_ONE_STEP_BEAR = 20;
+    public static final int MINUS_HEALTH_ONE_STEP_BEAR = 100;
 
 
     public static final int MAX_SPEED_EAGLE = 2;

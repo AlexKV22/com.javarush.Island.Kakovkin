@@ -5,6 +5,7 @@ import AnimalPackage.Herbivore.*;
 import AnimalPackage.Predator.*;
 import PlantPackage.Plant;
 import RandomizePackage.RandomizeClass;
+import Statistics.Statistic;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -19,10 +20,12 @@ public class Location extends Thread {
    public Location() {
       this.animal = new ArrayList<>();
       this.plant = new ArrayList<>();
+      this.predators = new ArrayList<>();
+      this.herbivores = new ArrayList<>();
    }
 
    public void startCell() {
-       for (int i = 0; i < 2; i++) {
+       for (int i = 0; i < 4; i++) {
            animal.add(new Bear());
            animal.add(new Fox());
            animal.add(new Snake());
@@ -39,7 +42,7 @@ public class Location extends Thread {
            animal.add(new Rabbit());
            animal.add(new Sheep());
        }
-       for (int i = 0; i < 10; i++) {
+       for (int i = 0; i < 100; i++) {
            plant.add(new Plant());
        }
    }
@@ -50,7 +53,7 @@ public class Location extends Thread {
 
             if (someAnimal != null) {
                 someAnimal.move();
-
+            }
                 if (someAnimal instanceof Predator) {
                     predators.add((Predator) someAnimal);
                 } else {
@@ -60,24 +63,23 @@ public class Location extends Thread {
                 for (Predator predator : predators) {
                     for (Herbivore herbivore : herbivores) {
                         predator.eat(herbivore);
-                        System.out.println(predator.getX());
                     }
                 }
                 for (Herbivore herbivore : herbivores ) {
                     for (Plant plant1 : plant ) {
                         herbivore.eat(plant1);
                     }
-                }
-
+                }                                                       //сделать питание определенных классов, типа гусеница у утки
+                                                                        // сделать статистику ,класс
                 try {
                     someAnimal.multiple(someAnimal);
                 } catch (CloneNotSupportedException e) {
                     throw new RuntimeException(e);
                 }
             }
-        }
 
-        for (Plant plant1 : plant) {
+
+            for(Plant plant1 : plant) {
             try {
                 plant1.multiple(plant1);
             } catch (CloneNotSupportedException e) {

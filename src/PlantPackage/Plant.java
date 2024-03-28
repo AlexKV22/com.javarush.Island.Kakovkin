@@ -2,13 +2,12 @@ package PlantPackage;
 
 import AnimalPackage.Animal;
 import AnimalPackage.Predator.Bear;
-import Interfaces.Eatable;
 import RandomizePackage.RandomizeClass;
 import Settings.Settings;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Plant implements Eatable {
+public class Plant implements Cloneable {
     private double maxWeigth;
     private int maxCapacity;
     public static AtomicInteger atomicInteger = new AtomicInteger(0);

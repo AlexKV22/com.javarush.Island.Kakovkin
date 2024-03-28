@@ -25,7 +25,7 @@ public class Fox extends Predator {
     public void eat(Herbivore food) {
         this.eat = RandomizeClass.getRandom();
 
-        if (food instanceof Rabbit && eat < 0.7 && food.getX() == this.getX() && food.getY() == this.getY()) {
+        if (food instanceof Rabbit && eat < 0.7 && food.getX() == this.getX() && food.getY() == this.getY() && Rabbit.atomicInteger.get() > 0) {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_FOX) {
                 setMaxWeigth(Settings.MAX_WEIGHT_FOX);
             }
@@ -33,7 +33,7 @@ public class Fox extends Predator {
             super.eat(food);
         }
 
-        else if (food instanceof Mouse && eat < 0.9 && food.getX() == this.getX() && food.getY() == this.getY()) {
+        else if (food instanceof Mouse && eat < 0.9 && food.getX() == this.getX() && food.getY() == this.getY() && Mouse.atomicInteger.get() > 0) {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_FOX) {
                 setMaxWeigth(Settings.MAX_WEIGHT_FOX);
             }
@@ -41,7 +41,7 @@ public class Fox extends Predator {
             super.eat(food);
         }
 
-        else if (food instanceof Duck && eat < 0.6 && food.getX() == this.getX() && food.getY() == this.getY()) {
+        else if (food instanceof Duck && eat < 0.6 && food.getX() == this.getX() && food.getY() == this.getY() && Duck.atomicInteger.get() > 0) {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_FOX) {
                 setMaxWeigth(Settings.MAX_WEIGHT_FOX);
             }
@@ -49,7 +49,7 @@ public class Fox extends Predator {
             super.eat(food);
         }
 
-        else if (food instanceof Caterpillar && eat < 0.4 && food.getX() == this.getX() && food.getY() == this.getY()) {
+        else if (food instanceof Caterpillar && eat < 0.4 && food.getX() == this.getX() && food.getY() == this.getY() && Caterpillar.atomicInteger.get() > 0) {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_FOX) {
                 setMaxWeigth(Settings.MAX_WEIGHT_FOX);
             }

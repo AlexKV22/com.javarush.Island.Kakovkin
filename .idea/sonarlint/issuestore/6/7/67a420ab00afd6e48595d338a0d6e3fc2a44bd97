@@ -9,3 +9,7 @@ java:S1450"RRemove the "eat" field and declare it as a local variable in the r
 [
 java:S1854M"9Remove this useless assignment to local variable "death".(½ÜøÅúÿÿÿÿ8ï®‰àç1
 G	java:S106O"+Replace this use of System.out by a logger.(ê¼áÉ8ğ®‰àç1
+V
+java:S1128"9Remove this unused import 'AnimalPackage.Predator.Eagle'.(µ‡ñ8ÏáÙ¤è1
+L
+java:S1128"/Remove this unused import 'IslandModel.Island'.(ñŒîé8ĞáÙ¤è1

@@ -9,3 +9,5 @@ java:S1854;"8Remove this useless assignment to local variable "food".(üË’ª8Ğ• 
 [
 java:S1854i"9Remove this useless assignment to local variable "death".(½ÜøÅúÿÿÿÿ8Ô• Ñç1
 L	java:S106k"+Replace this use of System.out by a logger.(¹ÑŠûüÿÿÿÿ8Õ• Ñç1
+L
+java:S1128"/Remove this unused import 'IslandModel.Island'.(ñŒîé8Ùü¼£è1

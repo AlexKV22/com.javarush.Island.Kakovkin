@@ -1,32 +1,34 @@
 
-g	java:S112K"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8»‘ê×ç1
-g	java:S112T"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¼‘ê×ç1
+g	java:S112M"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¼Ñ¯¢è1
+g	java:S112V"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ú¢ş£è1
 ƒ
-java:S1319"fThe type of "animal" should be an interface such as "List" rather than the implementation "ArrayList".(®´…ú8½‘ê×ç1
+java:S1319"fThe type of "animal" should be an interface such as "List" rather than the implementation "ArrayList".(®´…ú8½Ñ¯¢è1
 †
-java:S1319"iThe type of "predators" should be an interface such as "List" rather than the implementation "ArrayList".(¹øÔ²8½‘ê×ç1
+java:S1319"iThe type of "predators" should be an interface such as "List" rather than the implementation "ArrayList".(¹øÔ²8½Ñ¯¢è1
 Œ
-java:S1319"jThe type of "herbivores" should be an interface such as "List" rather than the implementation "ArrayList".(¯’„æøÿÿÿÿ8½‘ê×ç1
+java:S1319"jThe type of "herbivores" should be an interface such as "List" rather than the implementation "ArrayList".(¯’„æøÿÿÿÿ8½Ñ¯¢è1
 ‚
-java:S1319"eThe type of "plant" should be an interface such as "List" rather than the implementation "ArrayList".(æˆƒæ8½‘ê×ç1
+java:S1319"eThe type of "plant" should be an interface such as "List" rather than the implementation "ArrayList".(æˆƒæ8½Ñ¯¢è1
 o
-java:S1104"RMake animal a static final constant or non-public and provide accessors if needed.(®´…ú8½‘ê×ç1
+java:S1104"RMake animal a static final constant or non-public and provide accessors if needed.(®´…ú8¾Ñ¯¢è1
 r
-java:S1104"UMake predators a static final constant or non-public and provide accessors if needed.(¹øÔ²8½‘ê×ç1
+java:S1104"UMake predators a static final constant or non-public and provide accessors if needed.(¹øÔ²8¾Ñ¯¢è1
 x
-java:S1104"VMake herbivores a static final constant or non-public and provide accessors if needed.(¯’„æøÿÿÿÿ8½‘ê×ç1
+java:S1104"VMake herbivores a static final constant or non-public and provide accessors if needed.(¯’„æøÿÿÿÿ8¾Ñ¯¢è1
 n
-java:S1104"QMake plant a static final constant or non-public and provide accessors if needed.(æˆƒæ8½‘ê×ç1
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(éü·ş8¾‘ê×ç1
+java:S1104"QMake plant a static final constant or non-public and provide accessors if needed.(æˆƒæ8¾Ñ¯¢è1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(éü·ş8¿Ñ¯¢è1
+j
+java:S2259K"HA "NullPointerException" could be thrown; "someAnimal" is nullable here.(¶®Åºùÿÿÿÿ8¯¥ş£è1
 ]
-java:S2134"@Don't extend "Thread", since the "run" method is not overridden.(Ş¿Ã¯8—’ê×ç1
+java:S2134"@Don't extend "Thread", since the "run" method is not overridden.(Ş¿Ã¯8ÑÑ¯¢è1
 o
-java:S37760"RRefactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.(ÕªâŠ8œ’ê×ç1
+java:S37763"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(ÕªâŠ8ÛÑ¯¢è1
 l
-java:S62016"JReplace this instanceof check and cast with 'instanceof Predator predator'(¨ÂÎ¡ÿÿÿÿÿ8œ’ê×ç1
-F	java:S106?"+Replace this use of System.out by a logger.(éº–8’ê×ç1
+java:S62019"JReplace this instanceof check and cast with 'instanceof Predator predator'(¨ÂÎ¡ÿÿÿÿÿ8İÑ¯¢è1
 X
-java:S1128"<Remove this unused import 'RandomizePackage.RandomizeClass'.(íí~8’ê×ç1
+java:S1128"<Remove this unused import 'RandomizePackage.RandomizeClass'.(íí~8½¿Â¢è1
+N
+java:S1128"1Remove this unused import 'Statistics.Statistic'.(ÔÁÑù8İ¨è£è1
 O
-java:S1128
-"-Remove this unused import 'java.util.Random'.(èøÉ›ùÿÿÿÿ8’ê×ç1
+java:S1128"-Remove this unused import 'java.util.Random'.(èøÉ›ùÿÿÿÿ8½¿Â¢è1

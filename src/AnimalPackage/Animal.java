@@ -1,7 +1,6 @@
 package AnimalPackage;
 import AnimalPackage.Herbivore.Herbivore;
 import AnimalPackage.Predator.Predator;
-import Interfaces.Eatable;
 import PlantPackage.Plant;
 import RandomizePackage.RandomizeClass;
 import Settings.Settings;
@@ -10,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 
-public abstract class Animal implements Eatable {
+public abstract class Animal implements Cloneable  {
     private double maxWeigth;
     private int maxCapacity;
     private double maxFoodNeeded;

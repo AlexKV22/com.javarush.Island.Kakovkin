@@ -25,7 +25,7 @@ public class Eagle extends Predator {
     public void eat(Herbivore food) {
         this.eat = RandomizeClass.getRandom();
 
-        if (food instanceof Rabbit && eat < 0.9 && food.getX() == this.getX() && food.getY() == this.getY()) {
+        if (food instanceof Rabbit && eat < 0.9 && food.getX() == this.getX() && food.getY() == this.getY() && Rabbit.atomicInteger.get() > 0) {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_EAGLE) {
                 setMaxWeigth(Settings.MAX_WEIGHT_EAGLE);
             }
@@ -33,7 +33,7 @@ public class Eagle extends Predator {
             super.eat(food);
         }
 
-        else if (food instanceof Mouse && eat < 0.9 && food.getX() == this.getX() && food.getY() == this.getY()) {
+        else if (food instanceof Mouse && eat < 0.9 && food.getX() == this.getX() && food.getY() == this.getY() && Mouse.atomicInteger.get() > 0) {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_EAGLE) {
                 setMaxWeigth(Settings.MAX_WEIGHT_EAGLE);
             }
@@ -41,7 +41,7 @@ public class Eagle extends Predator {
             super.eat(food);
         }
 
-        else if (food instanceof Duck && eat < 0.8 && food.getX() == this.getX() && food.getY() == this.getY()) {
+        else if (food instanceof Duck && eat < 0.8 && food.getX() == this.getX() && food.getY() == this.getY() && Duck.atomicInteger.get() > 0) {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_EAGLE) {
                 setMaxWeigth(Settings.MAX_WEIGHT_EAGLE);
             }
@@ -51,7 +51,7 @@ public class Eagle extends Predator {
     }
 
     public void eat(Fox food) {
-        if (eat < 0.1 && food.getX() == this.getX() && food.getY() == this.getY()) {
+        if (eat < 0.1 && food.getX() == this.getX() && food.getY() == this.getY() && Fox.atomicInteger.get() > 0) {
             if(food.getMaxWeigth() >= Settings.MAX_FOOD_NEEDED_EAGLE) {
                 setMaxWeigth(Settings.MAX_WEIGHT_EAGLE);
             }

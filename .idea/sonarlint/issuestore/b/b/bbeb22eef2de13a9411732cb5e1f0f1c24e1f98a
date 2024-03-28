@@ -7,3 +7,5 @@ java:S1444"3Make this "public static atomicInteger" field final(¯ÎÌ©8¾«…àç1
 t
 java:S1450"RRemove the "eat" field and declare it as a local variable in the relevant methods.(¸¡»¸ÿÿÿÿÿ8Ï«…àç1
 L	java:S106N"+Replace this use of System.out by a logger.(ãº¸úÿÿÿÿ8è«…àç1
+L
+java:S1128"/Remove this unused import 'IslandModel.Island'.(ñŒîé8€üñ£è1

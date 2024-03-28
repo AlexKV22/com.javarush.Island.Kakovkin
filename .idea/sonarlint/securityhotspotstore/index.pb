@@ -5,8 +5,6 @@ K
 src/IslandModel/Island.java,d\c\dc731e6247f6e413950a9e455923ebaddd541bbe
 M
 src/IslandModel/Location.java,1\9\19a187a2546b42dd1b5100092050512a0b9ec1f6
-K
-src/Interfaces/Eatable.java,5\4\54e544e17e5dbc9b61c95a9687c18dc437198470
 X
 (src/AnimalPackage/Predator/Predator.java,2\d\2df41bad3c7b4e7f0590dd35228497e05f85e5d7
 M

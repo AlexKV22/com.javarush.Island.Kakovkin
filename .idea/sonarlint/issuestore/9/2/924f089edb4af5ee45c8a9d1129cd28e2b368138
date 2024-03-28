@@ -1,17 +1,22 @@
 
 7
-java:S1220""Move this file to a named package.8çÚí×ç1
+java:S1220""Move this file to a named package.8™Øç£è1
+x
+java:S2095"VUse try-with-resources or close this "ScheduledExecutorService" in a "finally" clause.(Ã€æıÿÿÿÿ8Øç£è1
 s
-java:S2095"VUse try-with-resources or close this "ScheduledExecutorService" in a "finally" clause.(µåÌÃ8êÚí×ç1
+java:S2095"VUse try-with-resources or close this "ScheduledExecutorService" in a "finally" clause.(Å”òé8Øç£è1
 N
-java:S1128"1Remove this unused import 'AnimalPackage.Animal'.(œèèÕ8îÚí×ç1
+java:S1128"1Remove this unused import 'AnimalPackage.Animal'.(œèèÕ8”¼è£è1
 ^
-java:S1128"<Remove this unused import 'AnimalPackage.Herbivore.Buffalo'.(ñ¢¨—ıÿÿÿÿ8îÚí×ç1
+java:S1128"<Remove this unused import 'AnimalPackage.Herbivore.Buffalo'.(ñ¢¨—ıÿÿÿÿ8”¼è£è1
 Z
-java:S1128"8Remove this unused import 'AnimalPackage.Predator.Bear'.(ô­ù’øÿÿÿÿ8îÚí×ç1
+java:S1128"8Remove this unused import 'AnimalPackage.Predator.Bear'.(ô­ù’øÿÿÿÿ8”¼è£è1
 Z
-java:S1128"8Remove this unused import 'AnimalPackage.Predator.Wolf'.(Ú½­×ùÿÿÿÿ8îÚí×ç1
+java:S1128"8Remove this unused import 'AnimalPackage.Predator.Wolf'.(Ú½­×ùÿÿÿÿ8•¼è£è1
 S
-java:S1128"1Remove this unused import 'IslandModel.Location'.(‡‚ãÂùÿÿÿÿ8îÚí×ç1
+java:S1128"1Remove this unused import 'IslandModel.Location'.(‡‚ãÂùÿÿÿÿ8•¼è£è1
 P
-java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ8îÚí×ç1
+java:S1128	".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ8•¼è£è1
+c
+java:S1128
+"ARemove this unused import 'java.util.concurrent.ExecutorService'.(æ÷–£ùÿÿÿÿ8•¼è£è1
