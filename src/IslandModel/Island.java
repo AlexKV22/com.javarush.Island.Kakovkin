@@ -1,13 +1,6 @@
 package IslandModel;
-
-import AnimalPackage.Animal;
-import AnimalPackage.Herbivore.Herbivore;
-import AnimalPackage.Predator.Predator;
-import PlantPackage.Plant;
 import Settings.Settings;
 
-import java.util.Random;
-import java.util.Set;
 
 public class Island implements Runnable {
     public Location[][] locations = new Location[Settings.MAX_ROW_ISLAND][Settings.MAX_COL_ISLAND];

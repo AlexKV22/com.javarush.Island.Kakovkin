@@ -4,11 +4,8 @@ import AnimalPackage.Animal;
 import AnimalPackage.Herbivore.*;
 import AnimalPackage.Predator.*;
 import PlantPackage.Plant;
-import RandomizePackage.RandomizeClass;
-import Statistics.Statistic;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Location extends Thread {
 
@@ -70,7 +67,7 @@ public class Location extends Thread {
                         herbivore.eat(plant1);
                     }
                 }                                                       //сделать питание определенных классов, типа гусеница у утки
-                                                                        // сделать статистику ,класс
+                                                                        //сделать определенное количество циклов
                 try {
                     someAnimal.multiple(someAnimal);
                 } catch (CloneNotSupportedException e) {
