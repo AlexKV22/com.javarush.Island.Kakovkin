@@ -1,21 +1,24 @@
 
-g	java:S112>"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8šĞÇ«è1
-g	java:S112N"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8šĞÇ«è1
-g	java:S112a"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8šĞÇ«è1
+g	java:S112@"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8òô»Íè1
+g	java:S112Q"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8óô»Íè1
+g	java:S112h"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8óô»Íè1
 †
-java:S1319"iThe type of "predators" should be an interface such as "List" rather than the implementation "ArrayList".(¹øÔ²8›ĞÇ«è1
+java:S1319"iThe type of "predators" should be an interface such as "List" rather than the implementation "ArrayList".(¹øÔ²8ôô»Íè1
 Œ
-java:S1319"jThe type of "herbivores" should be an interface such as "List" rather than the implementation "ArrayList".(¯’„æøÿÿÿÿ8›ĞÇ«è1
+java:S1319"jThe type of "herbivores" should be an interface such as "List" rather than the implementation "ArrayList".(¯’„æøÿÿÿÿ8õô»Íè1
 ‚
-java:S1319"eThe type of "plant" should be an interface such as "List" rather than the implementation "ArrayList".(æˆƒæ8›ĞÇ«è1
+java:S1319"eThe type of "plant" should be an interface such as "List" rather than the implementation "ArrayList".(æˆƒæ8õô»Íè1
 r
-java:S1104"UMake predators a static final constant or non-public and provide accessors if needed.(¹øÔ²8›ĞÇ«è1
+java:S1104"UMake predators a static final constant or non-public and provide accessors if needed.(¹øÔ²8õô»Íè1
 x
-java:S1104"VMake herbivores a static final constant or non-public and provide accessors if needed.(¯’„æøÿÿÿÿ8›ĞÇ«è1
+java:S1104"VMake herbivores a static final constant or non-public and provide accessors if needed.(¯’„æøÿÿÿÿ8öô»Íè1
 n
-java:S1104"QMake plant a static final constant or non-public and provide accessors if needed.(æˆƒæ8›ĞÇ«è1
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(éü·ş8œĞÇ«è1
+java:S1104"QMake plant a static final constant or non-public and provide accessors if needed.(æˆƒæ8öô»Íè1
+{
+java:S1104"YMake reentrantLock a static final constant or non-public and provide accessors if needed.(êòÿ¬ùÿÿÿÿ8öô»Íè1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(éü·ş8÷ô»Íè1
 ]
-java:S2134	"@Don't extend "Thread", since the "run" method is not overridden.(Ş¿Ã¯8ûĞÇ«è1
+java:S2134
+"@Don't extend "Thread", since the "run" method is not overridden.(Ş¿Ã¯8òõ»Íè1
 o
-java:S37762"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(ÕªâŠ8ÑÇ«è1
+java:S37764"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(ÕªâŠ8ùõ»Íè1

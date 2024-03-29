@@ -20,7 +20,7 @@ public class ScheduleWork {
         scheduledExecutorService.scheduleAtFixedRate(island, 0, 2, TimeUnit.SECONDS);
         scheduledExecutorService1.scheduleAtFixedRate(new Statistic(), 0, 2, TimeUnit.SECONDS);
         try {
-            Thread.sleep(10000);
+            Thread.sleep(30000);
             scheduledExecutorService.shutdown();
             scheduledExecutorService1.shutdown();
         } catch (InterruptedException e) {

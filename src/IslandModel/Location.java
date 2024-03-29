@@ -5,12 +5,14 @@ import AnimalPackage.Predator.*;
 import PlantPackage.Plant;
 
 import java.util.ArrayList;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Location extends Thread {
 
   public ArrayList<Predator> predators;
   public ArrayList<Herbivore> herbivores;
   public ArrayList<Plant> plant;
+  public ReentrantLock reentrantLock = new ReentrantLock();
 
    public Location() {
       this.plant = new ArrayList<>();
@@ -48,7 +50,7 @@ public class Location extends Thread {
 
 
     public void startLive() {
-
+            reentrantLock.lock();
         for (Predator predator : predators) {
             if (predator != null) {
                 predator.move();
@@ -62,9 +64,10 @@ public class Location extends Thread {
                 throw new RuntimeException(e);
             }
         }
+        reentrantLock.unlock();
 
 
-
+        reentrantLock.lock();
         for (Herbivore herbivore : herbivores ) {
             if (herbivore != null) {
                 herbivore.move();
@@ -78,7 +81,9 @@ public class Location extends Thread {
                 throw new RuntimeException(e);
             }
         }
+        reentrantLock.unlock();
 
+        reentrantLock.lock();
         for (Predator predator : predators) {
             for (Herbivore herbivore : herbivores) {
                 predator.eat(herbivore);
@@ -89,7 +94,9 @@ public class Location extends Thread {
                 herbivore.eat(plant1);
             }
         }
+        reentrantLock.unlock();
 
+            reentrantLock.lock();
             for(Plant plant1 : plant) {
             try {
                 plant1.multiple(plant1);
@@ -97,6 +104,7 @@ public class Location extends Thread {
                 throw new RuntimeException(e);
             }
         }
+        reentrantLock.unlock();
     }
 }
 
